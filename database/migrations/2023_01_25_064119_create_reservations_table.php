@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('number_of_guest');
             $table->dateTime('res_date');
             $table->decimal('price');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
