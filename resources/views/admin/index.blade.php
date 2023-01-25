@@ -7,6 +7,9 @@ welcome
 @section('css')
 
 @endsection
+@section('Dashboard')
+active
+@endsection
 @section('title_page')
 welcome
 @endsection

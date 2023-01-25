@@ -14,7 +14,7 @@ class CatregoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.categoryTable.show');
     }
 
     /**
@@ -24,7 +24,7 @@ class CatregoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categoryTable.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class CatregoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.categoryTable.edit');
     }
 
     /**

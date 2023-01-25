@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\ReservationController;
 Route::get('/admin/table', function () {
     return view('admin.table');
 });
+
 Route::get('/', function () {
     return view('admin.login');
 });
