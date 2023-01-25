@@ -39,7 +39,69 @@ Reservation
         </div>
         </div>
         <!-- /.card-header -->
+
         <div class="card-body table-responsive p-0" style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone No.</th>
+                <th>Email</th>
+                <th>Trip</th>
+                <th>Guest number</th>
+                <th>Reservation date</th>
+                <th>Status</th>
+                <th>edit</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                @foreach ($data as $value)
+
+
+                <tr>
+                    <td>{{$value['id']}}</td>
+                    <td>{{$value['first_name']}}</td>
+                    <td>{{$value['last_name']}}</td>
+                    <td>{{$value['phoneNumber']}}</td>
+                    <td>{{$value['email']}}</td>
+                    <td>{{$value['trip']	}}</td>
+                    <td>{{$value['number_of_guest']}}</td>
+                   
+                    <td>{{$value['res_date']	}}</td>
+
+                    @if ($value['status']=="Pending")
+                    <td><span class="badge bg-warning">Pending</span></td>
+                    @endif
+
+                    @if ($value['status']	=="Accepted")
+                    <td><span class="badge bg-success">Accepted</span></td>
+
+                    @endif
+                    @if ($value['status']	=="Rejected")
+                    <td><span class="badge bg-danger">Rejected</span></td>
+
+                    @endif
+                    {{-- <td>{{$value['status']	}}</td> --}}
+                    
+
+                    <td><a href="{{Route('admin.reservation.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="{{Route('admin.reservation.destroy',$value['id'])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                @endforeach
+        {{-- <div class="card-body table-responsive p-0" style="height: 300px;">
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
@@ -65,7 +127,7 @@ Reservation
                 <td>
                     <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
                 </td>
-              </tr>
+              </tr> --}}
             
             </tbody>
           </table>

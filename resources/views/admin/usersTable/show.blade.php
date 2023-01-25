@@ -37,7 +37,7 @@ user
           <h3 class="card-title">User controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
+            <div class="input-group input-group-sm" style="width: 100px;">
 
 
 
