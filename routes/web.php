@@ -3,7 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CatregoryController;
+use App\Http\Controllers\Admin\TripController;
+use App\Http\Controllers\Admin\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +46,13 @@ Route::get('/dashboard', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(function()
+Route::middleware(['auth','verified','admin'])->name('admin.')->prefix('admin')->group(function()
 {
 Route::get('/',[AdminController::class,'index'])->name('index');
+Route::resource('/users',UserController::class);
+Route::resource('/categories',CatregoryController::class);
+Route::resource('/trips',TripController::class);
+Route::resource('/reservation',ReservationController::class);
 });
 
 

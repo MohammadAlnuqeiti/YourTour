@@ -31,7 +31,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">@yield('title_page')</a></li>
+              <li class="breadcrumb-item"><a href="#">@yield('title_page1')</a></li>
               <li class="breadcrumb-item active">@yield('title_page2')</li>
             </ol>
           </div><!-- /.col -->
@@ -43,7 +43,7 @@
     <!-- Main content -->
 
     @yield('content')
-  
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
