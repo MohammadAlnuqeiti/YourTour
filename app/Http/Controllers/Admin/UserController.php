@@ -54,12 +54,11 @@ class UserController extends Controller
             'password' => ['required', Rules\Password::defaults()],
         ]);
         $user=User::create([
-
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'password' => Hash::make($request->phone),
-            'is_admin' => $request->select,
+            'password' => Hash::make($request->password),
+            'is_admin' => true,
 
         ]);
         event(new Registered($user));

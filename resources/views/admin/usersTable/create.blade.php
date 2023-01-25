@@ -72,13 +72,13 @@ Category
                   <div class="alert alert-danger">{{ $message }}</div>
                  @enderror
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="exampleSelectRounded0">Is Admin <code></code></label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select">
                       <option value="0">User</option>
                       <option value="1">Admin</option>
                     </select>
-                  </div>
+                  </div> --}}
                 {{-- <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">

@@ -42,7 +42,7 @@ user
 
 
 
-                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new user</button></a>
+                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new admin</button></a>
 
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
