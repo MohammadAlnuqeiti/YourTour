@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->default('icon.png');
             $table->string('password');
             $table->boolean('is_admin')->default(0);
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

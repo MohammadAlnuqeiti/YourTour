@@ -39,42 +39,60 @@ Category
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form action="{{route('admin.users.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter name" value="{{ old('name')}}" class="@error('name') is-invalid @enderror">
+                  @error('name')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail11">Email</label>
+                  <input type="text" class="form-control" id="exampleInputEmail11" name="email" placeholder="Enter Long description" value="{{ old('email')}}" class="@error('email') is-invalid @enderror">
+                  @error('email')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputEmail11">Phone Number</label>
+                  <input type="number" class="form-control" id="exampleInputEmail11" name="phone" placeholder="Enter Long description" value="{{ old('phone')}}" class="@error('phone') is-invalid @enderror">
+                  @error('phone')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
                 </div>
                 <div class="form-group">
-                    <label for="exampleSelectRounded0">Flat <code>.rounded-0</code></label>
-                    <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                      <option>Value 1</option>
-                      <option>Value 2</option>
-                      <option>Value 3</option>
+                  <label for="exampleInputEmail1">Password</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="password" placeholder="Enter guest number" value="{{ old('password')}}" class="@error('password') is-invalid @enderror">
+                  @error('password')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelectRounded0">Is Admin <code></code></label>
+                    <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select">
+                      <option value="0">User</option>
+                      <option value="1">Admin</option>
                     </select>
                   </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input id="trip_image" type="file" name="trip_image" placeholder="Upload Image" value="{{ old('trip_image')}}" class="@error('movie_image') is-invalid @enderror"><br><br>
+
+
                     </div>
                     <div class="input-group-append">
                       <span class="input-group-text">Upload</span>
                     </div>
                   </div>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-              </div>
-              <!-- /.card-body -->
+                </div> --}}
+
 
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>

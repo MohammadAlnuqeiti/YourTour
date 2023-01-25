@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->integer('guest_number')->default(1);
             $table->decimal('price');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
