@@ -14,7 +14,7 @@ class TripController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.tripsTable.show');
     }
 
     /**
