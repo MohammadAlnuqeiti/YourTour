@@ -38,10 +38,10 @@ Category
           <h3 class="card-title">Category controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
+            <div class="input-group input-group-sm" style="width: 100px;">
 
                 
-         <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="{{route('admin.categories.create')}}">Add new category</a></button>
+        <a href="{{route('admin.categories.create')}}"> <button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
                 
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 

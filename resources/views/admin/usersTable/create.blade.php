@@ -16,7 +16,7 @@ Create new category
 @endsection
 
 
-@section('Category')
+@section('User')
 active
 @endsection
 

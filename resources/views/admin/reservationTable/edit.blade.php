@@ -2,7 +2,7 @@
 
 
 @section('title')
-Category
+Reservation
 @endsection
 
 @section('css')
@@ -12,11 +12,11 @@ Category
 @endsection
 
 @section('section_title')
-Create new category
+Edit Reservation
 @endsection
 
 
-@section('Category')
+@section('Reservation')
 active
 @endsection
 
@@ -25,7 +25,7 @@ admin
 @endsection
 
 @section('title_page2')
-Category
+Reservation
 @endsection
 
 
@@ -35,45 +35,46 @@ Category
     <div class="col-12">
         <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">Edit</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form action="{{route('admin.reservation.update',$data->id)}}" method="POST" enctype="multipart/form-data">
+              @method('PUT')
+
+              @csrf
+{{-- 
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="trip_name" value="{{$data->name}}">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail11">Short description</label>
+                  <input type="text" class="form-control" id="exampleInputEmail11" name="short_description" value="{{$data->short_description}}" >
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputEmail11">Long description</label>
+                  <input type="text" class="form-control" id="exampleInputEmail11" name="long_description" value="{{$data->long_description}}" placeholder="Enter Long description" >
                 </div>
                 <div class="form-group">
-                    <label for="exampleSelectRounded0">Flat <code>.rounded-0</code></label>
-                    <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                      <option>Value 1</option>
-                      <option>Value 2</option>
-                      <option>Value 3</option>
+                  <label for="exampleInputEmail1">Guest number</label>
+                  <input type="number" class="form-control" id="exampleInputEmail1" name="guest_number" placeholder="Enter guest number" value="{{$data->guest_number}}">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Price</label>
+                  <input type="number" class="form-control" id="exampleInputEmail1" name="trip_price" placeholder="Enter price" value="{{$data->price}}">
+                </div> --}}
+                <div class="form-group">
+                    <label for="exampleSelectRounded0">Status</label>
+                    <select class="custom-select rounded-0" id="exampleSelectRounded0" name="status">
+                      <option value="Pending">Pending</option>
+                      <option value="Accepted">Accepted</option>
+                      <option value="Rejected">Rejected</option>
                     </select>
                   </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-              </div>
+               
               <!-- /.card-body -->
 
               <div class="card-footer">
