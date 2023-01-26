@@ -14,7 +14,8 @@
           <img src="{{asset('assets/img/icon.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}
+          <a href="#" class="d-block">
+            {{ Auth::user()->name }}
         </a>
         </div>
       </div>
@@ -43,7 +44,7 @@
                 Dashboard
               </p>
             </a>
-           
+
           </li>
           <li class="nav-item">
             <a href="{{route('admin.users.index')}}" class="nav-link  @yield('User')">
@@ -90,7 +91,13 @@
               </p>
             </a>
           </li>
-         
+          <li class="nav-item">
+            <a href="{{route('logout')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">logout</p>
+            </a>
+          </li>
+
           {{-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">

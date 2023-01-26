@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -14,7 +15,27 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('admin.reservationTable.show');
+
+        $reservations = Reservation::with('trip')->get();
+        $data = [];
+        foreach ($reservations as $reservation) {
+            $data[] = [
+                'id' => $reservation->id,
+                'first_name' => $reservation->first_name,
+                'last_name' => $reservation->last_name,
+                'phoneNumber' => $reservation->phoneNumber,
+                'email'=>$reservation->email,
+                'number_of_guest' => $reservation->number_of_guest,
+                'res_date' => $reservation->res_date,
+                'price' => $reservation->price,
+                'status' => $reservation->status,
+                'trip' => isset($reservation->trip) ? $reservation->trip->name : "",
+                'user' => isset($reservation->user) ? $reservation->user->name : "",
+
+
+            ];
+        }
+        return view('admin.reservationTable.show',['data'=>$data]);
     }
 
     /**
@@ -35,7 +56,22 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Reservation::create([
+
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'phoneNumber' => $request->phoneNumber,
+            'email' => $request->email,
+            'number_of_guest' => $request->number_of_guest,
+            'res_date' => $request->res_date,
+            'price' => $request->price,
+            'status' => $request->status,
+            'trip_id' => $request->select,
+
+
+        ]);
+
+        return redirect()->route('admin.reservation.index');
     }
 
     /**
@@ -57,7 +93,8 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Reservation::findOrfail($id);
+        return view('admin.reservationTable.edit', ['data' => $data]);
     }
 
     /**
@@ -69,7 +106,22 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = Reservation::findOrfail($id);
+        // $data->first_name = $request->first_name;
+        // $data->last_name = $request->last_name;
+        // $data->phoneNumber = $request->phoneNumber;
+        // $data->email = $request->email;
+        // $data->number_of_guest = $request->number_of_guest;
+        // $data->res_date = $request->res_date;
+        // $data->price = $request->price;
+        $data->status = $request->status;
+        // $data->trip_id = $request->select;
+
+        $data->save();
+        //-------------------------------
+
+        return redirect()->route('admin.reservation.index');
     }
 
     /**
@@ -80,6 +132,7 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reservation::findOrfail($id)->delete();
+        return redirect()->route('admin.reservation.index');
     }
 }

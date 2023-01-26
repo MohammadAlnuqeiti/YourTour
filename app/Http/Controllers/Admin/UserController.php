@@ -3,6 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+
+use Illuminate\Auth\Events\Registered;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +22,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.usersTable.show');
+           $data=User::all();
+
+
+        return view('admin.usersTable.show',['data'=>$data]);
     }
 
     /**
@@ -24,7 +35,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.usersTable.create');
+
     }
 
     /**
@@ -35,7 +47,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'phone' => ['required', 'max:10'],
+            'password' => ['required', Rules\Password::defaults()],
+        ]);
+        $user=User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'is_admin' => true,
+
+        ]);
+        event(new Registered($user));
+
+
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -80,6 +109,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrfail($id)->delete();
+        return redirect()->route('admin.users.index');
     }
 }

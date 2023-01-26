@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Trip;
 use Illuminate\Http\Request;
 
 class TripController extends Controller
@@ -14,7 +15,26 @@ class TripController extends Controller
      */
     public function index()
     {
-        return view('admin.tripsTable.show');
+        $trips = Trip::with('category')->get();
+        $data = [];
+        foreach ($trips as $trip) {
+            $data[] = [
+                'id' => $trip->id,
+                'name' => $trip->name,
+                'short_description' => $trip->short_description,
+                'long_description' => $trip->long_description,
+                'guest_number' => $trip->guest_number,
+                'price' => $trip->price,
+                'image' => $trip->image,
+                'category' => isset($trip->category) ? $trip->category->name : "",
+
+
+            ];
+        }
+        // $data=Trip::all();
+
+
+        return view('admin.tripsTable.show',['data'=>$data]);
     }
 
     /**
@@ -24,7 +44,8 @@ class TripController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tripsTable.create');
+
     }
 
     /**
@@ -35,7 +56,22 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $photoName = $request->file('trip_image')->getClientOriginalName();
+        $request->file('trip_image')->storeAs('public/image', $photoName);
+
+        Trip::create([
+
+            'name' => $request->trip_name,
+            'short_description' => $request->short_description,
+            'long_description' => $request->long_description,
+            'guest_number' => $request->guest_number,
+            'price' => $request->trip_price,
+            'category_id' => $request->select,
+            'image' => $photoName,
+
+        ]);
+
+        return redirect()->route('admin.trips.index');
     }
 
     /**
@@ -46,7 +82,7 @@ class TripController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -57,7 +93,8 @@ class TripController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Trip::findOrfail($id);
+        return view('admin.tripsTable.edit', ['data' => $data]);
     }
 
     /**
@@ -69,7 +106,19 @@ class TripController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = Trip::findOrfail($id);
+        $data->name = $request->trip_name;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون
+        $data->short_description = $request->short_description;
+        $data->long_description = $request->long_description;
+        $data->guest_number = $request->guest_number;
+        $data->price = $request->trip_price;
+        $data->category_id = $request->select;
+        $data->image = '$request->trip_image';
+        $data->save();
+        //-------------------------------
+
+        return redirect()->route('admin.trips.index');
     }
 
     /**
@@ -80,6 +129,7 @@ class TripController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Trip::findOrfail($id)->delete();
+        return redirect()->route('admin.trips.index');
     }
 }

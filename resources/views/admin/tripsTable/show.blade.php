@@ -30,6 +30,7 @@ Trips
 
 @section('content')
  <!-- /.row -->
+
  <div class="row container m-auto">
     <div class="col-12">
       <div class="card">
@@ -37,11 +38,12 @@ Trips
           <h3 class="card-title">Trips controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
+            <div class="input-group input-group-sm" style="width: 100px;">
 
-                
-         <button href="" type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new trip</button>
-                
+                {{-- <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="{{route('admin.categories.create')}}">Add new category</a></button> --}}
+
+         <a href="{{route('admin.trips.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new trip</button></a>
+
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
               <div class="input-group-append">
@@ -57,17 +59,49 @@ Trips
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>#</th>
+                <th>Name</th>
+                <th>Short description</th>
+                <th>Long description</th>
+                <th>image</th>
+                <th>Category</th>
+                <th>Guest number</th>
+                <th>price</th>
+                <th>edit</th>
+                <th>delete</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+
+                @foreach ($data as $value)
+
+
+                <tr>
+                    <td>{{$value['id']}}</td>
+                    <td>{{$value['name']}}</td>
+                    <td>{{$value['short_description']}}</td>
+                    <td>{{$value['long_description']}}</td>
+                    {{-- <td>{{$value['image']}}</td> --}}
+
+                    <td><img src="{{URL::asset("storage/image/".$value['image'])}}" alt="" style="width: 75px"></td>
+                    <td>{{$value['category']}}</td>
+                    <td>{{$value['guest_number']	}}</td>
+                    <td>{{$value['price']	}}</td>
+                    <td><a href="{{Route('admin.trips.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="{{Route('admin.trips.destroy',$value['id'])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                @endforeach
+
+              {{-- </tr> <tr>
                 <td>183</td>
                 <td>John Doe</td>
                 <td>11-7-2014</td>
@@ -78,9 +112,8 @@ Trips
                   </td>
                 <td>
                     <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
-                </td>
-              </tr>
-            
+                </td> --}}
+
             </tbody>
           </table>
         </div>

@@ -37,11 +37,13 @@ user
           <h3 class="card-title">User controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
+            <div class="input-group input-group-sm" style="width: 100px;">
 
-                
-         <button href="" type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new user</button>
-                
+
+
+
+                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new admin</button></a>
+
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
               <div class="input-group-append">
@@ -58,25 +60,38 @@ user
             <thead>
               <tr>
                 <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Password</th>
+                <th>is_admin</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                <td>
-                    <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
-                </td>
-              </tr>
-            
+                @foreach ($data as $value)
+
+                <tr>
+                    <td>{{$value->id}}</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->email	}}</td>
+                    <td>{{$value->phone	}}</td>
+                    <td>{{$value->password	}}</td>
+                    <td>{{$value->is_admin	}}</td>
+                    {{-- <td><a href="{{Route('admin.trips.edit',$value->id)}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td> --}}
+                    <td>
+                        <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+                @endforeach
+
+
             </tbody>
           </table>
         </div>
