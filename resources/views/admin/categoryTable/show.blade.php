@@ -74,7 +74,8 @@ Category
               <tr>
                 <td> {{$category->id}}</td>
                 <td>{{$category->name}}</td>
-                <td><img src="{{URL::asset('storge/image'.$category->image)}}"style="height:100px; width:150px;"></td>
+                <?php $img=$category->image?>
+                <td><img src="{{URL::asset("storge/image/$img")}}" style="height:100px; width:150px;"></td>
                 <td>{{$category->description}}</td>
                 {{-- <td><span class="tag tag-success">Approved</span></td>
                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>

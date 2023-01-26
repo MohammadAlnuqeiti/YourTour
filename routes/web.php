@@ -101,8 +101,8 @@ Route::get('/booking/{id}',[BookController::class,'index'])->name('book');
 //     return view('publicUser.book');
 // });
 
-Route::get('/details',function(){
-    return view('publicUser.details');
-});
+// Route::get('/details',function(){
+//     return view('publicUser.details');
+// });
 });
 require __DIR__.'/auth.php';
