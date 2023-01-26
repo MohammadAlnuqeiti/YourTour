@@ -49,6 +49,7 @@ Reservation
                 <th>Last name</th>
                 <th>Phone No.</th>
                 <th>Email</th>
+                {{-- <th>ID</th> --}}
                 <th>Trip</th>
                 <th>Guest number</th>
                 <th>Reservation date</th>
@@ -68,9 +69,10 @@ Reservation
                     <td>{{$value['last_name']}}</td>
                     <td>{{$value['phoneNumber']}}</td>
                     <td>{{$value['email']}}</td>
+                    {{-- <td>{{$value['user']}}</td> --}}
                     <td>{{$value['trip']	}}</td>
                     <td>{{$value['number_of_guest']}}</td>
-                   
+
                     <td>{{$value['res_date']	}}</td>
 
                     @if ($value['status']=="Pending")
@@ -86,7 +88,7 @@ Reservation
 
                     @endif
                     {{-- <td>{{$value['status']	}}</td> --}}
-                    
+
 
                     <td><a href="{{Route('admin.reservation.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
                     </a></td>
@@ -128,7 +130,7 @@ Reservation
                     <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
                 </td>
               </tr> --}}
-            
+
             </tbody>
           </table>
         </div>

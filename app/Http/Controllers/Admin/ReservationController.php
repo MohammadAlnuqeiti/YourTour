@@ -30,6 +30,7 @@ class ReservationController extends Controller
                 'price' => $reservation->price,
                 'status' => $reservation->status,
                 'trip' => isset($reservation->trip) ? $reservation->trip->name : "",
+                'user' => isset($reservation->user) ? $reservation->user->name : "",
 
 
             ];
@@ -66,7 +67,7 @@ class ReservationController extends Controller
             'price' => $request->price,
             'status' => $request->status,
             'trip_id' => $request->select,
-            
+
 
         ]);
 
@@ -105,9 +106,9 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $data = Reservation::findOrfail($id);
-        // $data->first_name = $request->first_name;  
+        // $data->first_name = $request->first_name;
         // $data->last_name = $request->last_name;
         // $data->phoneNumber = $request->phoneNumber;
         // $data->email = $request->email;
@@ -116,7 +117,7 @@ class ReservationController extends Controller
         // $data->price = $request->price;
         $data->status = $request->status;
         // $data->trip_id = $request->select;
-        
+
         $data->save();
         //-------------------------------
 
