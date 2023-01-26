@@ -28,14 +28,7 @@ admin
 Category
 @endsection
 
-{{-- <h1>Edit role</h1>    
-<form action="{{route('role.update',$role->id)}}" method="POST">
-    @method('PUT')
-    @csrf
-    <input type="text" name="roleName" placeholder=" Enter name role"><br><br>
-   
-    <button type ="submit" >submit</button>
-</form> --}}
+
 
 @section('content')
  <!-- /.row -->
@@ -60,18 +53,7 @@ Category
                   <label for="exampleInputEmail1">Description</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  description" name="description" value="{{$category->description}}">
                 </div>
-                {{-- <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-                </div> --}}
-                {{-- <div class="form-group">
-                  <label for="exampleSelectRounded0">Flat <code>.rounded-0</code></label>
-                  <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option>Value 1</option>
-                    <option>Value 2</option>
-                    <option>Value 3</option>
-                  </select>
-                </div> --}}
+
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
@@ -84,10 +66,7 @@ Category
                     </div>
                   </div>
                 </div>
-                {{-- <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div> --}}
+            
               </div>
               <!-- /.card-body -->
 
