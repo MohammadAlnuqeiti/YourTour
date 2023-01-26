@@ -61,6 +61,9 @@
 a.nav-link:hover{
   color: #3ED2A2 !important;
 }
+a.nav-link.active:hover{
+  color: #fff !important;
+}
   </style>
 
   @yield('css')
