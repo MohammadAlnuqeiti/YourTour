@@ -41,7 +41,7 @@ class CatregoryController extends Controller
     {
         // dd("welcom");
         $category_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/categoryimage',$category_img);
+        $request->file('image')->storeAs('public/image',$category_img);
 
         // insert category
         $categories = new Category();
@@ -94,7 +94,7 @@ class CatregoryController extends Controller
         $category=Category::findorFail($id);
         $category->name=$request->name;
         $category->description=$request->description;
-        $category->image=$request->image;
+        $category->image=$photoName;
        
         $category->save();
          return redirect()->route('admin.categories.index');
