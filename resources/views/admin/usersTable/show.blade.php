@@ -37,12 +37,12 @@ user
           <h3 class="card-title">User controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 100px;">
+            <div class="input-group input-group-sm" style="width: 90px;">
 
 
 
 
-                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new admin</button></a>
+                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 

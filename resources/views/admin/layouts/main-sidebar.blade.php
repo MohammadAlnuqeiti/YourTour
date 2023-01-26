@@ -1,9 +1,9 @@
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar elevation-4" style="background-color:#dddddd">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{asset('assets/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="{{route('admin.index')}}" class="brand-link">
+      <img src="{{asset('assets/img/placeholder.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-medium" style="color:#3ED2A2 ">YourTour</span>
     </a>
 
     <!-- Sidebar -->
@@ -48,7 +48,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('admin.users.index')}}" class="nav-link  @yield('User')">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa-solid fa-users"></i>
               <p>
                 User
                 {{-- <span class="right badge badge-danger">user</span> --}}
@@ -57,7 +57,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('admin.categories.index')}}" class="nav-link  @yield('Category')">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa-solid fa-clipboard-list"></i>
               <p>
                 Category
                 {{-- <span class="right badge badge-danger">user</span> --}}
@@ -66,8 +66,8 @@
           </li>
           <li class="nav-item">
             <a href="{{route('admin.trips.index')}}" class="nav-link  @yield('Trips')">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
+              <i class="nav-icon fa-solid fa-plane-departure"></i>
+              <p><i class=""></i>
                 Trips
                 {{-- <span class="right badge badge-danger">user</span> --}}
               </p>
@@ -84,7 +84,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('admin.users.index')}}" class="nav-link  @yield('Profile')">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fa-solid fa-address-card"></i>
               <p>
                 Profile
                 {{-- <span class="right badge badge-danger">user</span> --}}
@@ -93,7 +93,8 @@
           </li>
           <li class="nav-item">
             <a href="{{route('logout')}}" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
+             
+              <i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>
               <p class="text">logout</p>
             </a>
           </li>
