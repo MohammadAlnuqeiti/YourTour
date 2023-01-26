@@ -82,8 +82,10 @@ Trips
                     <td>{{$value['short_description']}}</td>
                     <td>{{$value['long_description']}}</td>
                     {{-- <td>{{$value['image']}}</td> --}}
+                    
+<?php $img=$value['image']?>
 
-                    <td><img src="{{URL::asset("storage/image/".$value['image'])}}" alt="" style="width: 75px"></td>
+                    <td><img src="{{URL::asset("storage/image/$img")}}" alt="" style="width: 75px"></td>
                     <td>{{$value['category']}}</td>
                     <td>{{$value['guest_number']	}}</td>
                     <td>{{$value['price']	}}</td>
