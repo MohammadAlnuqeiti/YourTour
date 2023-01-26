@@ -40,9 +40,9 @@ Category
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 100px;">
 
-                
+
          <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="{{route('admin.categories.create')}}">Add new category</a></button>
-                
+
               {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
               <div class="input-group-append">
@@ -69,13 +69,14 @@ Category
             </thead>
             <tbody >
               @foreach ($categories as $category)
-                  
-              
+
+
               <tr>
                 <td> {{$category->id}}</td>
                 <td>{{$category->name}}</td>
                 <?php $img=$category->image?>
                 <td><img src="{{URL::asset("storge/image/$img")}}" style="height:100px; width:150px;"></td>
+
                 <td>{{$category->description}}</td>
                 {{-- <td><span class="tag tag-success">Approved</span></td>
                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
@@ -93,7 +94,7 @@ Category
                 </td>
               </tr>
               @endforeach
-            
+
             </tbody>
           </table>
         </div>
