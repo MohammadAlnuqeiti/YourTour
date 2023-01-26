@@ -13,6 +13,7 @@ use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\PackageDetailsController;
 use App\Http\Controllers\User\TripsDetailsController;
 use App\Http\Controllers\User\BookController;
+use App\Http\Controllers\User\ProfileUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,6 +89,8 @@ Route::get('/contact',function(){
 Route::resource('/signup',RegisterUserController::class);
 
 Route::resource('/login',LoginUserController::class);
+
+Route::resource('/profile',ProfileUserController::class);
 
 Route::get('/package_details',[PackageDetailsController::class,'index'])->name('package.details');
 
