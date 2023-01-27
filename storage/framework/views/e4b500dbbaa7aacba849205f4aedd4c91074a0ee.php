@@ -77,8 +77,10 @@ Trips
                     <td><?php echo e($value['short_description']); ?></td>
                     <td><?php echo e($value['long_description']); ?></td>
                     
+
 <?php $img=$value['image']?>
-                    <td><img src="<?php echo e(URL::asset("storage/public/404-tick.png")); ?>" alt="" style="width: 75px"></td>
+
+                    <td><img src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="" style="width: 75px"></td>
                     <td><?php echo e($value['category']); ?></td>
                     <td><?php echo e($value['guest_number']); ?></td>
                     <td><?php echo e($value['price']); ?></td>

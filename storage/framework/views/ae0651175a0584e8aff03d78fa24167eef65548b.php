@@ -59,89 +59,21 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
-            <div class="row g-4">
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
+            <div class="row g-4"> 
+                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="<?php echo e(asset('storage/image/card1.png')); ?>" alt="Card image cap">
+                        <img class="card-img-top" src=" <?php echo e(asset('storage/image/card1.png')); ?>" alt="Card image cap">
                         <div class="card-body">
-                          <h3>Bali</h3>
-                          <p class="card-text">There is no other place like Bali in this world. A magical blend of culture</p>
+                          
+                          <h3><?php echo e($value->name); ?></h3>
+                          <p class="card-text"><?php echo e($value->description); ?></p>
                         </div>
-                      </div>
+                       
+                      </div> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="<?php echo e(route('user.package.details')); ?>">
-                    <div class="service-item rounded pt-3" id="card2">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Turkey</h5>
-                            <p>Turkey is famous for the Blue Mosque, the New Mosque, the Hagia Sophia</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="#">
-                    <div class="service-item rounded pt-3" id="card3">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Egypt</h5>
-                            <p>Egypt has one of the longest histories of any country, tracing its heritage along the Nile Delta</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
-                    <div class="service-item rounded pt-3" id="card4">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Malaysia</h5>
-                            <p>Malaysia has a multi-ethnic, multicultural, and multilingual society.</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="#">
-                    <div class="service-item rounded pt-3" id="card5">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Maldives</h5>
-                            <p>Maldives is largely flat and has no land features such as hills or rivers, but some islands have dunes</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
-                    <div class="service-item rounded pt-3" id="card6">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Lebanon</h5>
-                            <p> It is part of the Levant region of the Middle East. Lebanon is home to roughly five million people </p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="#">
-                    <div class="service-item rounded pt-3" id="card7">
-                        <div class="p-4">
-
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Jordan</h5>
-                            <p>the geography offered makes Jordan an attractive tourism destination.</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
-                    <div class="service-item rounded pt-3" id="card8" >
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Cyprus</h5>
-                            <p>it is the 40th most popular destination in the world and the 6th most popular per capita of local </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+                
     <!-- Service End -->
 
      <!-- Destination Start -->

@@ -70,7 +70,7 @@ Category
                 <td> <?php echo e($category->id); ?></td>
                 <td><?php echo e($category->name); ?></td>
                 <?php $img=$category->image?>
-                <td><img src="<?php echo e(URL::asset("storge/image/$img")); ?>" style="height:100px; width:150px;"></td>
+                <td><img src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="" style="width: 75px"></td>
 
                 <td><?php echo e($category->description); ?></td>
                 

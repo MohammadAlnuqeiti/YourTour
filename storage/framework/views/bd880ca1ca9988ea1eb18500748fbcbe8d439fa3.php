@@ -53,8 +53,7 @@ Category
                   <label for="exampleInputEmail1">Description</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  description" name="description" value="<?php echo e($category->description); ?>">
                 </div>
-                
-                
+
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
@@ -67,7 +66,7 @@ Category
                     </div>
                   </div>
                 </div>
-                
+            
               </div>
               <!-- /.card-body -->
 
@@ -114,4 +113,5 @@ Category
     });
   </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/categoryTable/edit.blade.php ENDPATH**/ ?>
