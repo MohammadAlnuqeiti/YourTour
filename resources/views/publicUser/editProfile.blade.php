@@ -13,6 +13,7 @@
 <br>
 <div class="container">
     <div class="main-body">
+        <h3>User profile</h3>
         <div class="row">
             <div class="col-lg-4">
                 <div class="card">
@@ -28,6 +29,11 @@
                     </div>
                 </div>
             </div>
+            <form action="{{route('user.profile.update',4)}}" method="POST" enctype="multipart/form-data">
+
+                @method('PUT')
+
+                @csrf
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
@@ -36,7 +42,7 @@
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="John Doe">
+                                <input type="text" class="form-control" value="{{auth()->user()->name}}" name="name">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -44,7 +50,7 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="john@example.com">
+                                <input type="text" class="form-control" value="{{auth()->user()->email}}" name="email">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -52,34 +58,42 @@
                                 <h6 class="mb-0">Phone</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="(239) 816-9029">
+                                <input type="text" class="form-control" value="{{auth()->user()->phone}}" name="phone">
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Mobile</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 <input type="text" class="form-control" value="(320) 380-4539">
                             </div>
-                        </div>
-                        <div class="row mb-3">
+                        </div> --}}
+                        {{-- <div class="row mb-3">
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Address</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
-                            <div class="col-sm-3"></div>
+                            {{-- <div class="col-sm-3">
                             <div class="col-sm-9 text-secondary">
-                                <input type="button" class="btn btn-primary px-4" value="Save Changes">
+                                <input type="submit" class="btn btn-primary px-4" value="Save Changes">
                             </div>
+                            </div> --}}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                  {{-- <a class="btn btn-info "  href="{{route('user.profile.edit',1)}}" style="border-radius: 10px">Save</a> --}}
+                                  <button type="submit" class="btn btn-primary">save</button>
+                                </div>
+                              </div>
+                        </form>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

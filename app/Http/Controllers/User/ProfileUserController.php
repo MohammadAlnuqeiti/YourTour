@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class ProfileUserController extends Controller
 {
@@ -71,7 +73,16 @@ class ProfileUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $profile=User::findorFail($id);
+        $profile->name = $request->name;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون
+        $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        // $profile->guest_number = $request->guest_number;
+        // $data->price = $request->trip_price;
+        // $data->category_id = $request->select;
+        // $data->image = $photoName;
+        $profile->save();
+        return view('publicUser.profile');
     }
 
     /**
