@@ -72,8 +72,31 @@
                        
                       </div> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
+                    <div class="service-item rounded pt-3" id="card5">
+                        <div class="p-4">
+
+                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
+                            <h5>Maldives</h5>
+                            <p>Maldives is largely flat and has no land features such as hills or rivers, but some islands have dunes</p>
+                        </div>
+                    </div>
                 </a>
                 
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="<?php echo e(route('user.package.details')); ?>">
+                    <div class="service-item rounded pt-3" id="card7">
+                        <div class="p-4">
+
+                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
+                            <h5>Jordan</h5>
+                            <p>the geography offered makes Jordan an attractive tourism destination.</p>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </div> --}}
     <!-- Service End -->
 
      <!-- Destination Start -->
