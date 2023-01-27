@@ -14,6 +14,7 @@ use App\Http\Controllers\User\PackageDetailsController;
 use App\Http\Controllers\User\TripsDetailsController;
 use App\Http\Controllers\User\BookController;
 use App\Http\Controllers\User\ProfileUserController;
+use App\Http\Controllers\User\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +53,8 @@ Route::resource('/reservation',ReservationController::class);
 //---------------------------------------
 
 //  route user
-
-
+    // Route::get('/search', 'SearchController@search')->name('search');
+  
 Route::prefix('user')->name('user.')->group(function () {
 
 
@@ -70,7 +71,7 @@ Route::get('/contact',function(){
 })->name('contact');
 
 Route::resource('/signup',RegisterUserController::class);
-
+Route::post('/search' , [Search::class , 'search'])->name('search');
 Route::get('/login',[LoginUserController::class,'index'])->name('login');
 Route::get('/login/check',[LoginUserController::class,'LoginPost'])->name('login.check');
 Route::get('/login/destroy',[LoginUserController::class,'destroy'])->name('login.destroy');

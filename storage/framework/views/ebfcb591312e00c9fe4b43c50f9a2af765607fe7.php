@@ -30,7 +30,7 @@
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['category']); ?></small>
-                        
+
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0"><?php echo e($value['price']); ?> JD</h3>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-                        
+
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0">$139.00</h3>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-                        
+
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0">$189.00</h3>
