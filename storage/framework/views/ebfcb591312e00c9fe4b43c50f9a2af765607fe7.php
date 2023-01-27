@@ -26,7 +26,7 @@
 
                         <?php $img=$value['image']?>
 
-                        <img class="img-fluid" src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="">
+                        <img class="img-fluid" src="<?php echo e(asset("storage/image/$img")); ?>" alt="">
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['category']); ?></small>

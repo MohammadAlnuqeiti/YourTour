@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
+use App\Models\Trip;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,13 +15,14 @@ class BookController extends Controller
 
     public function index($id)
     {
-        return view('publicUser.book',['id'=>$id]);
+        $data = Trip::findOrfail($id);
+        return view('publicUser.book',['data'=>$data]);
 
     }
     public function create(Request $request , $id)
     {
         $user=$request->user_id;
-        // dd($request->user_id);
+        // dd($request->guest_number);
         Reservation::create([
 
             'first_name' => $request->first_name,

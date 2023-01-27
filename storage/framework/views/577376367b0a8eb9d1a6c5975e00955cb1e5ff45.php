@@ -19,7 +19,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="/users/img/user.webp" alt="Admin" class="rounded-circle" width="150">
+                    <img src="<?php echo e(asset("storage/image/".auth()->user()->image)); ?>" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4><?php echo e(auth()->user()->name); ?></h4>
                       
@@ -61,8 +61,8 @@
                     </div>
                   </div>
                   <hr>
-                  
-        
+
+
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info "  href="<?php echo e(route('user.profile.edit',4)); ?>" style="border-radius: 10px">Edit</a>

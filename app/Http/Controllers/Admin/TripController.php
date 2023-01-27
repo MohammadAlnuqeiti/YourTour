@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Trip;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class TripController extends Controller
@@ -94,7 +96,9 @@ class TripController extends Controller
     public function edit($id)
     {
         $data = Trip::findOrfail($id);
-        return view('admin.tripsTable.edit', ['data' => $data]);
+        $category=Category::all();
+
+        return view('admin.tripsTable.edit', ['data' => $data,'category'=>$category]);
     }
 
     /**

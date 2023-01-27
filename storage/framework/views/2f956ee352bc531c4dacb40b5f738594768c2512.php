@@ -41,7 +41,7 @@
     <?php echo $__env->make('publicUser.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!--  Hero Start -->
-     
+
     <!-- Hero End -->
 
 
@@ -54,8 +54,8 @@
             </div>
             <div class="row g-4 justify-content-around">
                  <?php $__currentLoopData = $results; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                 
-                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
+
+                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details',1)); ?>">
                         <div class="card" style="width: 20rem;height: 25rem;">
                             <img class="card-img-top"  style="height: 15rem; padding: 0.5rem;" src=" <?php echo e(asset("storage/image/".$value->image)); ?>" alt="Card image cap">
                             <div class="card-body">
@@ -72,9 +72,10 @@
                 </div>
             </div>
         </div>
-    
-    
 
-<?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+
+
+<?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-</html><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/publicUser/search.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\xampp\htdocs\yourTour\resources\views/publicUser/search.blade.php ENDPATH**/ ?>

@@ -75,7 +75,7 @@ Trips
                     <td><?php echo e($value['id']); ?></td>
                     <td><?php echo e($value['name']); ?></td>
                     <td><?php echo e($value['short_description']); ?></td>
-                    <td><?php echo e($value['long_description']); ?></td>
+                    <td style="border:none;overflow-x:scroll;max-width:300px"><?php echo e($value['long_description']); ?></td>
                     
 
 <?php $img=$value['image']?>

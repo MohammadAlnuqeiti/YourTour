@@ -15,7 +15,7 @@
         <div class="booking p-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-6 text-white">
-                    <h6 class="text-white text-uppercase">Booking  <?php echo e($id); ?></h6>
+                    <h6 class="text-white text-uppercase">Booking  <?php echo e($data->guest_number); ?></h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
                     <p class="mb-4">Reconnect with yourself and take time away from your hectic life.
 
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-6">
                     <h1 class="text-white mb-4">Book A Tour</h1>
-                    <form action="<?php echo e(route('user.book.create',$id)); ?>" method="POST">
+                    <form action="<?php echo e(route('user.book.create',$data->id)); ?>" method="POST">
                         <?php echo method_field('GET'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="row g-3">
@@ -50,12 +50,22 @@
                                     <label for="name">Phone Number</label>
                                 </div>
                             </div>
+                            <?php if($data->guest_number==1): ?>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="number" class="form-control bg-transparent" id="name" placeholder="Guest Number" min="1" value="1" name="guest_number">
                                     <label for="name">Number of guest</label>
                                 </div>
                             </div>
+                            <?php endif; ?>
+                            <?php if($data->guest_number!=1): ?>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="<?php echo e($data->guest_number); ?>" name="guest_number">
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email" name="email">

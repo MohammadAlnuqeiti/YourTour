@@ -80,7 +80,7 @@ Trips
                     <td>{{$value['id']}}</td>
                     <td>{{$value['name']}}</td>
                     <td>{{$value['short_description']}}</td>
-                    <td>{{$value['long_description']}}</td>
+                    <td style="border:none;overflow-x:scroll;max-width:300px">{{$value['long_description']}}</td>
                     {{-- <td>{{$value['image']}}</td> --}}
 
 <?php $img=$value['image']?>

@@ -82,7 +82,8 @@ class ProfileUserController extends Controller
         // $data->category_id = $request->select;
         // $data->image = $photoName;
         $profile->save();
-        return view('publicUser.profile');
+        // return view('publicUser.profile');
+        return response('ok');
     }
 
     /**
