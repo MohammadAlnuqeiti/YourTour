@@ -40,15 +40,10 @@ Category
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 100px;">
 
-                
-        <a href="{{route('admin.categories.create')}}"> <button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
-                
-              {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                  <i class="fas fa-search"></i>
-                </button> --}}
+         <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="{{route('admin.categories.create')}}">Add new category</a></button>
+
+   
               </div>
             </div>
           </div>
@@ -59,29 +54,40 @@ Category
             <thead>
               <tr>
                 <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                {{-- <th>Reason</th> --}}
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody >
+              @foreach ($categories as $category)
+
+
               <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td> {{$category->id}}</td>
+                <td>{{$category->name}}</td>
+                <?php $img=$category->image?>
+                <td><img src="{{URL::asset("storage/image/$img")}}" alt="" style="width: 75px"></td>
+
+                <td>{{$category->description}}</td>
+
                 <td>
-                    <button href="" type="button" class="btn btn-block bg-gradient-success btn-sm"><a href="">Edit</a></button>
-                  </td>
+                  <a href="{{route('admin.categories.edit',$category->id)}}"><button  type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button></a>
+                </td>
                 <td>
-                    <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                  <form action="{{route('admin.categories.destroy',$category->id)}}" method="post">
+                    @method('delete')
+                    @csrf
+
+                    <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                  </form>
                 </td>
               </tr>
-            
+              @endforeach
+
             </tbody>
           </table>
         </div>

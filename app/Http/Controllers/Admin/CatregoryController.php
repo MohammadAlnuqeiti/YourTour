@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CatregoryController extends Controller
 {
@@ -14,7 +15,10 @@ class CatregoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categoryTable.show');
+        // return view('admin.categoryTable.show');
+        $categories = Category::get();
+        
+        return view('admin.categoryTable.show', compact('categories'));
     }
 
     /**
@@ -35,7 +39,21 @@ class CatregoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd("welcom");
+        $category_img = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/image',$category_img);
+
+        // insert category
+        $categories = new Category();
+        $categories->name = $request->name;
+        $categories->description = $request->description;
+        $categories->image = $category_img;
+        $categories->save();
+
+        return redirect()->route('admin.categories.index');
+
+
+        // return response('Category Add Successfully');
     }
 
     /**
@@ -57,7 +75,9 @@ class CatregoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.categoryTable.edit');
+        $category= Category::findOrFail($id);
+       
+        return view('admin.categoryTable.edit', ['category' => $category]);
     }
 
     /**
@@ -69,7 +89,16 @@ class CatregoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $photoName = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/image', $photoName);
+        $category=Category::findorFail($id);
+        $category->name=$request->name;
+        $category->description=$request->description;
+        $category->image=$photoName;
+       
+        $category->save();
+         return redirect()->route('admin.categories.index');
+     
     }
 
     /**
@@ -80,6 +109,8 @@ class CatregoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::findorFail($id)->delete();
+        return redirect()->route('admin.categories.index');
+
     }
 }

@@ -108,15 +108,9 @@ class ReservationController extends Controller
     {
 
         $data = Reservation::findOrfail($id);
-        // $data->first_name = $request->first_name;
-        // $data->last_name = $request->last_name;
-        // $data->phoneNumber = $request->phoneNumber;
-        // $data->email = $request->email;
-        // $data->number_of_guest = $request->number_of_guest;
-        // $data->res_date = $request->res_date;
-        // $data->price = $request->price;
+   
         $data->status = $request->status;
-        // $data->trip_id = $request->select;
+      
 
         $data->save();
         //-------------------------------

@@ -87,7 +87,6 @@ Reservation
                     <td><span class="badge bg-danger">Rejected</span></td>
 
                     @endif
-                    {{-- <td>{{$value['status']	}}</td> --}}
 
 
                     <td><a href="{{Route('admin.reservation.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
@@ -103,33 +102,7 @@ Reservation
                 </tr>
 
                 @endforeach
-        {{-- <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                <td>
-                    <button href="" type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
-                  </td>
-                <td>
-                    <button href="" type="button" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
-                </td>
-              </tr> --}}
+
 
             </tbody>
           </table>

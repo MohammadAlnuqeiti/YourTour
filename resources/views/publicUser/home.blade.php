@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tourist - Travel Agency HTML Template</title>
+    <title>YourTour - Travel  </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -60,8 +60,15 @@
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
             <div class="row g-4">
-                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
-                    <div class="service-item rounded pt-3 " id="card1">
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="{{asset('storage/image/card1.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h3>Bali</h3>
+                          <p class="card-text">There is no other place like Bali in this world. A magical blend of culture</p>
+                        </div>
+                      </div>
+                    {{-- <div class="service-item rounded pt-3 " id="card1">
                         <div class="p-4">
 
                             <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
@@ -69,13 +76,15 @@
                             <p>There is no other place like Bali in this world. A magical blend of culture</p>
                         </div>
                     </div>
-                </a> --}}
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="{{route('user.package.details')}}">
+                </a>
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
                     <div class="service-item rounded pt-3" id="card2">
                         <div class="p-4">
 
                             <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Turkey</h5>
+                            <h5>Turkey
+
+                            </h5>
                             <p>Turkey is famous for the Blue Mosque, the New Mosque, the Hagia Sophia</p>
                         </div>
                     </div>

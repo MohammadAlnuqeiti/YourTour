@@ -106,6 +106,9 @@ class TripController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $photoName = $request->file('trip_image')->getClientOriginalName();
+        $request->file('trip_image')->storeAs('public/image', $photoName);
+
 
         $data = Trip::findOrfail($id);
         $data->name = $request->trip_name;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون
@@ -114,7 +117,7 @@ class TripController extends Controller
         $data->guest_number = $request->guest_number;
         $data->price = $request->trip_price;
         $data->category_id = $request->select;
-        $data->image = '$request->trip_image';
+        $data->image = $photoName;
         $data->save();
         //-------------------------------
 

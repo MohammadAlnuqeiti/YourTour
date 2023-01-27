@@ -43,29 +43,6 @@ Reservation
               @method('PUT')
 
               @csrf
-{{-- 
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="trip_name" value="{{$data->name}}">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail11">Short description</label>
-                  <input type="text" class="form-control" id="exampleInputEmail11" name="short_description" value="{{$data->short_description}}" >
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail11">Long description</label>
-                  <input type="text" class="form-control" id="exampleInputEmail11" name="long_description" value="{{$data->long_description}}" placeholder="Enter Long description" >
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Guest number</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="guest_number" placeholder="Enter guest number" value="{{$data->guest_number}}">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Price</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="trip_price" placeholder="Enter price" value="{{$data->price}}">
-                </div> --}}
                 <div class="form-group">
                     <label for="exampleSelectRounded0">Status</label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0" name="status">
@@ -74,7 +51,7 @@ Reservation
                       <option value="Rejected">Rejected</option>
                     </select>
                   </div>
-               
+
               <!-- /.card-body -->
 
               <div class="card-footer">

@@ -37,6 +37,33 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
 
+  <script src="https://kit.fontawesome.com/a8b56cb52b.js" crossorigin="anonymous"></script>
+
   {{-- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"> --}}
+  <style> 
+  .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #3ED2A2 !important;
+}
+.nav-pills .nav-link{
+  color: #556080;
+}
+.btn.btn-sidebar{
+  background-color: #3ED2A2
+}
+.fas.fa-search.fa-fw{
+  color: #fff;
+}
+.d-block{
+  color: #556080
+}
+a.nav-link:hover{
+  color: #3ED2A2 !important;
+}
+a.nav-link.active:hover{
+  color: #fff !important;
+}
+  </style>
 
   @yield('css')
