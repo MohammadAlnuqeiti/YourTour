@@ -75,9 +75,9 @@
                             <h5>Bali</h5>
                             <p>There is no other place like Bali in this world. A magical blend of culture</p>
                         </div>
-                    </div> --}}
+                    </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="{{route('user.package.details')}}">
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
                     <div class="service-item rounded pt-3" id="card2">
                         <div class="p-4">
 
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="#">
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card3">
                         <div class="p-4">
 
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
                     <div class="service-item rounded pt-3" id="card4">
                         <div class="p-4">
 
@@ -108,8 +108,8 @@
                             <p>Malaysia has a multi-ethnic, multicultural, and multilingual society.</p>
                         </div>
                     </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="#">
+                </a> --}}
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card5">
                         <div class="p-4">
 
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
                     <div class="service-item rounded pt-3" id="card6">
                         <div class="p-4">
 
@@ -128,8 +128,8 @@
                             <p> It is part of the Levant region of the Middle East. Lebanon is home to roughly five million people </p>
                         </div>
                     </div>
-                </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="#">
+                </a> --}}
+                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card7">
                         <div class="p-4">
 
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
                     <div class="service-item rounded pt-3" id="card8" >
                         <div class="p-4">
                             <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
@@ -147,7 +147,7 @@
                             <p>it is the 40th most popular destination in the world and the 6th most popular per capita of local </p>
                         </div>
                     </div>
-                </a>
+                </a> --}}
             </div>
         </div>
     </div>
