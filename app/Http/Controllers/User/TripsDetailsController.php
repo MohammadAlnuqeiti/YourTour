@@ -14,8 +14,8 @@ class TripsDetailsController extends Controller
         // $employees = Employees::findOrFail($id);
 
         $trips = Trip::where('id',$id)->get();
+        // dd($trips);
 
-        // dd($data);
         $data = [];
         foreach ($trips as $trip) {
             $data[] = [
