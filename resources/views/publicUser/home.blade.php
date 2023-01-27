@@ -59,15 +59,20 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
-            <div class="row g-4">
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="{{asset('storage/image/card1.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h3>Bali</h3>
-                          <p class="card-text">There is no other place like Bali in this world. A magical blend of culture</p>
-                        </div>
-                      </div>
+            <div class="row g-4"> 
+                 @foreach ($data as $value)
+                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src=" {{asset("storage/image/".$value->image)}}" alt="Card image cap">
+                            <div class="card-body">
+                            
+                            <h3>{{$value->name}}</h3>
+                            <p class="card-text">{{$value->description}}</p>
+                            </div>
+                        
+                        </div> 
+                    </a>
+                    @endforeach
                     {{-- <div class="service-item rounded pt-3 " id="card1">
                         <div class="p-4">
 
@@ -77,7 +82,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card2">
                         <div class="p-4">
 
@@ -109,7 +114,7 @@
                         </div>
                     </div>
                 </a> --}}
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card5">
                         <div class="p-4">
 
@@ -118,7 +123,7 @@
                             <p>Maldives is largely flat and has no land features such as hills or rivers, but some islands have dunes</p>
                         </div>
                     </div>
-                </a>
+                </a> --}}
                 {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" href="#">
                     <div class="service-item rounded pt-3" id="card6">
                         <div class="p-4">
@@ -129,7 +134,7 @@
                         </div>
                     </div>
                 </a> --}}
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="{{route('user.package.details')}}">
+                {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="{{route('user.package.details')}}">
                     <div class="service-item rounded pt-3" id="card7">
                         <div class="p-4">
 
@@ -138,7 +143,7 @@
                             <p>the geography offered makes Jordan an attractive tourism destination.</p>
                         </div>
                     </div>
-                </a>
+                </a> --}}
                 {{-- <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" href="#">
                     <div class="service-item rounded pt-3" id="card8" >
                         <div class="p-4">
