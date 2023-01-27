@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tourist - Travel Agency HTML Template</title>
+    <title>YourTour - Travel  </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -82,7 +82,9 @@
                         <div class="p-4">
 
                             <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Turkey</h5>
+                            <h5>Turkey
+
+                            </h5>
                             <p>Turkey is famous for the Blue Mosque, the New Mosque, the Hagia Sophia</p>
                         </div>
                     </div>

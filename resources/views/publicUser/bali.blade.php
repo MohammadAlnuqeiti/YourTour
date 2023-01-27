@@ -13,8 +13,8 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Bali</h6>
-            <h1 class="mb-5">Bali Packages</h1>
+            <h6 class="section-title bg-white text-center text-primary px-3">Bali @if(Auth::user()){{ Auth::user()->id }}@endif</h6>
+            <h1 class="mb-5">Bali Packages  </h1>
         </div>
         <div class="row g-4 justify-content-center">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -38,7 +38,7 @@
                         </div>
                         <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="{{route('user.trip.details')}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="{{route('user.trip.details',2)}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                             <a href="/book" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
                         </div>
                     </div>

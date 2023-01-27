@@ -65,9 +65,19 @@
                 
                 
                 <a href="<?php echo e(route('user.contact')); ?>" class="nav-item nav-link">Contact</a>
-                <a href="<?php echo e(route('user.login.index')); ?>" class="nav-item nav-link">Log in</a>
+                <?php if(!Auth::user()): ?>
+                <a href="<?php echo e(route('user.login')); ?>" class="nav-item nav-link">Log in</a>
+                <?php endif; ?>
+                <?php if(Auth::user()): ?>
+                <a href="<?php echo e(route('user.login.destroy')); ?>" class="nav-item nav-link">logout</a>
+                <?php endif; ?>
             </div>
+            <?php if(!Auth::user()): ?>
             <a href="<?php echo e(route('user.signup.index')); ?>" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            <?php endif; ?>
+            <?php if(Auth::user()): ?>
+            <a href="<?php echo e(route('user.signup.index')); ?>" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+            <?php endif; ?>
         </div>
     </nav>
 <!-- Navbar  -->

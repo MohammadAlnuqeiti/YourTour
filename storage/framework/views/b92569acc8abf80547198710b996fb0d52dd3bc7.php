@@ -43,7 +43,7 @@ Category
 
          <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="<?php echo e(route('admin.categories.create')); ?>">Add new category</a></button>
 
-              
+   
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ Category
                 <td><img src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="" style="width: 75px"></td>
 
                 <td><?php echo e($category->description); ?></td>
-                
+
                 <td>
                   <a href="<?php echo e(route('admin.categories.edit',$category->id)); ?>"><button  type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button></a>
                 </td>

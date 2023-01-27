@@ -87,7 +87,6 @@ Reservation
                     <td><span class="badge bg-danger">Rejected</span></td>
 
                     <?php endif; ?>
-                    
 
 
                     <td><a href="<?php echo e(Route('admin.reservation.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
@@ -103,7 +102,7 @@ Reservation
                 </tr>
 
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
+
 
             </tbody>
           </table>
