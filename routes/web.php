@@ -77,10 +77,11 @@ Route::get('/login/destroy',[LoginUserController::class,'destroy'])->name('login
 
 Route::resource('/profile',ProfileUserController::class);
 
-Route::get('/package_details',[PackageDetailsController::class,'index'])->name('package.details');
+Route::get('/package_details/{id}',[PackageDetailsController::class,'index'])->name('package.details');
 
 Route::get('/trip_details/{id}',[TripsDetailsController::class,'index'])->name('trip.details');
 Route::get('/booking/{id}',[BookController::class,'index'])->name('book');
+Route::get('/booking/create/{id}',[BookController::class,'create'])->name('book.create');
 
 });
 require __DIR__.'/auth.php';

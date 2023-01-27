@@ -27,48 +27,51 @@
                 </div>
                 <div class="col-md-6">
                     <h1 class="text-white mb-4">Book A Tour</h1>
-                    <form>
+                    <form action="<?php echo e(route('user.book.create',$id)); ?>" method="POST">
+                        <?php echo method_field('GET'); ?>
+                        <?php echo csrf_field(); ?>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="First Name">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="First Name" name="first_name">
+                                    <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="user_id" value="<?php echo e(Auth::user()->id); ?>">
                                     <label for="name">First Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Last Name">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Last Name" name="last_name">
                                     <label for="name">Last Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Phone Number">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Phone Number" name="phoneNumber">
                                     <label for="name">Phone Number</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Phone Number">
+                                    <input type="number" class="form-control bg-transparent" id="name" placeholder="Guest Number" min="1" value="1" name="guest_number">
                                     <label for="name">Number of guest</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email" name="email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                    <label for="datetime">Date </label>
+                                    <input type="date" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" />
+                                    <label for="datetime">Date</label>
                                 </div>
                             </div>
                             
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="commint"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>

@@ -32,8 +32,8 @@
                      <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" value="1" min="1" max="10">
                         <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Add to cart</button>
                     </form> --}}
-                    <form action="{{route('user.book',$data[0]['id'])}}" class="add-inputs" method="get">
-                    {{-- @method('GET') --}}
+                    <form action="{{route('user.book',$data[0]['id'])}}" class="add-inputs" method="post">
+                    @method('GET')
                         @csrf
                         {{-- <a href="{{route('user.book')}}"> --}}
                             <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Book Now</button>

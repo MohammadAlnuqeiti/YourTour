@@ -61,7 +61,7 @@
             </div>
             <div class="row g-4">
                  @foreach ($data as $value)
-                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
+                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details',1)}}">
                         <div class="card" style="width: 20rem;">
                             <img class="card-img-top" src=" {{asset("storage/image/".$value->image)}}" alt="Card image cap">
                             <div class="card-body">
