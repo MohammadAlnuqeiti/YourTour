@@ -74,9 +74,19 @@
                     </div>
                 </div> --}}
                 <a href="{{route('user.contact')}}" class="nav-item nav-link">Contact</a>
-                <a href="{{route('user.login.index')}}" class="nav-item nav-link">Log in</a>
+                @if(!Auth::user())
+                <a href="{{route('user.login')}}" class="nav-item nav-link">Log in</a>
+                @endif
+                @if(Auth::user())
+                <a href="{{route('user.login.destroy')}}" class="nav-item nav-link">logout</a>
+                @endif
             </div>
+            @if(!Auth::user())
             <a href="{{route('user.signup.index')}}" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            @endif
+            @if(Auth::user())
+            <a href="{{route('user.signup.index')}}" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+            @endif
         </div>
     </nav>
 <!-- Navbar  -->
