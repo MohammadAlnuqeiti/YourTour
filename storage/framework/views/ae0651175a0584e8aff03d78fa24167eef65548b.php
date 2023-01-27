@@ -59,44 +59,24 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
-            <div class="row g-4"> 
+            <div class="row g-4">
                  <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
                     <div class="card" style="width: 20rem;">
                         <img class="card-img-top" src=" <?php echo e(asset('storage/image/card1.png')); ?>" alt="Card image cap">
                         <div class="card-body">
-                          
+
                           <h3><?php echo e($value->name); ?></h3>
                           <p class="card-text"><?php echo e($value->description); ?></p>
                         </div>
-                       
+
                       </div> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
-                    <div class="service-item rounded pt-3" id="card5">
-                        <div class="p-4">
 
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Maldives</h5>
-                            <p>Maldives is largely flat and has no land features such as hills or rivers, but some islands have dunes</p>
-                        </div>
-                    </div>
                 </a>
-                
-                <a class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" href="<?php echo e(route('user.package.details')); ?>">
-                    <div class="service-item rounded pt-3" id="card7">
-                        <div class="p-4">
 
-                            <i class="fa fa-3x fa-sharp fa-solid fa-sparkles text-primary mb-4"></i>
-                            <h5>Jordan</h5>
-                            <p>the geography offered makes Jordan an attractive tourism destination.</p>
-                        </div>
-                    </div>
-                </a>
-                
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- Service End -->
 
      <!-- Destination Start -->
@@ -112,21 +92,21 @@
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="users/img/popularD1.png" alt="">
-                                
+
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Jordan</div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="users/img/popularD3.png" alt="">
-                                
+
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Malaysia</div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="users/img/popularD4.png" alt="">
-                                
+
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Maldives</div>
                             </a>
                         </div>
@@ -135,7 +115,7 @@
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                     <a class="position-relative d-block h-100 overflow-hidden" href="">
                         <img class="img-fluid position-absolute w-100 h-100" src="users/img/popularD2.png" alt="" style="object-fit: cover;">
-                        
+
                         <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Cyprus</div>
                     </a>
                 </div>
