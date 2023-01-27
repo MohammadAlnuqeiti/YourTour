@@ -81,7 +81,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-info "  href="{{route('user.profile.edit',1)}}" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>

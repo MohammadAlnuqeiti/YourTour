@@ -58,7 +58,8 @@ class ProfileUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('publicUser.editProfile');
+
     }
 
     /**
