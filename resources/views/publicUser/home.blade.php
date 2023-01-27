@@ -59,18 +59,18 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
-            <div class="row g-4"> 
+            <div class="row g-4">
                  @foreach ($data as $value)
                     <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details')}}">
                         <div class="card" style="width: 20rem;">
                             <img class="card-img-top" src=" {{asset("storage/image/".$value->image)}}" alt="Card image cap">
                             <div class="card-body">
-                            
+
                             <h3>{{$value->name}}</h3>
                             <p class="card-text">{{$value->description}}</p>
                             </div>
-                        
-                        </div> 
+
+                        </div>
                     </a>
                     @endforeach
                     {{-- <div class="service-item rounded pt-3 " id="card1">
