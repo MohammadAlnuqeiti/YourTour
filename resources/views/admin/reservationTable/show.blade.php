@@ -49,7 +49,7 @@ Reservation
                 <th>Last name</th>
                 <th>Phone No.</th>
                 <th>Email</th>
-                {{-- <th>ID</th> --}}
+                <th>ID</th>
                 <th>Trip</th>
                 <th>Guest number</th>
                 <th>Reservation date</th>
@@ -69,7 +69,7 @@ Reservation
                     <td>{{$value['last_name']}}</td>
                     <td>{{$value['phoneNumber']}}</td>
                     <td>{{$value['email']}}</td>
-                    {{-- <td>{{$value['user']}}</td> --}}
+                    <td>{{$value['user']}}</td>
                     <td>{{$value['trip']	}}</td>
                     <td>{{$value['number_of_guest']}}</td>
 
