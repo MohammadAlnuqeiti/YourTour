@@ -76,7 +76,7 @@
             <a href="<?php echo e(route('user.signup.index')); ?>" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             <?php endif; ?>
             <?php if(Auth::user()): ?>
-            <a href="<?php echo e(route('user.signup.index')); ?>" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+            <a href="<?php echo e(route('user.profile.index')); ?>" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
             <?php endif; ?>
         </div>
     </nav>

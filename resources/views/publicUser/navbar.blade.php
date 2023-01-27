@@ -85,7 +85,7 @@
             <a href="{{route('user.signup.index')}}" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             @endif
             @if(Auth::user())
-            <a href="{{route('user.signup.index')}}" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+            <a href="{{route('user.profile.index')}}" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
             @endif
         </div>
     </nav>
