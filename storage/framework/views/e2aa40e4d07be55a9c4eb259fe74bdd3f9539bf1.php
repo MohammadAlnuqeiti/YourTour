@@ -2,7 +2,7 @@
 
 
 <?php $__env->startSection('title'); ?>
-Category
+Profile
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -12,11 +12,11 @@ Category
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('section_title'); ?>
-Edit Category
+
 <?php $__env->stopSection(); ?>
 
 
-<?php $__env->startSection('Category'); ?>
+<?php $__env->startSection('Profile'); ?>
 active
 <?php $__env->stopSection(); ?>
 
@@ -25,63 +25,56 @@ admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('title_page2'); ?>
-Category
+Profile
 <?php $__env->stopSection(); ?>
-
 
 
 <?php $__env->startSection('content'); ?>
- <!-- /.row -->
- <div class="row container m-auto">
-    <div class="col-12">
-        <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+
+
+
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 m-auto">
+
+          <!-- Profile Image -->
+          <div class="card card-primary card-outline">
+            <div class="card-body box-profile">
+              <div class="text-center">
+                <img class="profile-user-img img-fluid img-circle"
+                     src="../../dist/img/user4-128x128.jpg"
+                     alt="User profile picture">
+              </div>
+
+              <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+              <p class="text-muted text-center">Software Engineer</p>
+
+              <ul class="list-group list-group-unbordered mb-3">
+                <li class="list-group-item">
+                  <b>Followers</b> <a class="float-right">1,322</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Following</b> <a class="float-right">543</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Friends</b> <a class="float-right">13,287</a>
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form action="<?php echo e(route('admin.categories.update',$category->id)); ?>" method="POST" enctype="multipart/form-data">
-              <?php echo method_field('PUT'); ?>
-              <?php echo csrf_field(); ?>
-
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  name" name="name" value="<?php echo e($category->name); ?>">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Description</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  description" name="description" value="<?php echo e($category->description); ?>">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
-                    </div>
-                  </div>
-                </div>
-            
-              </div>
-              <!-- /.card-body -->
-
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
+            <!-- /.card-body -->
           </div>
           <!-- /.card -->
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- /.row -->
-<?php $__env->stopSection(); ?>
+    
+          <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('script'); ?>
+          <?php $__env->startSection('script'); ?>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables/jquery.dataTables.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')); ?>"></script>
@@ -113,5 +106,4 @@ Category
     });
   </script>
 <?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/categoryTable/edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/profile/show.blade.php ENDPATH**/ ?>

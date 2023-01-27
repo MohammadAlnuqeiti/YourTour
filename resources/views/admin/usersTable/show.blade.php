@@ -44,12 +44,7 @@ user
 
                 <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-              {{-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                  <i class="fas fa-search"></i>
-                </button> --}}
+             
               </div>
             </div>
           </div>
@@ -78,8 +73,7 @@ user
                     <td>{{$value->phone	}}</td>
                     <td>{{$value->password	}}</td>
                     <td>{{$value->is_admin	}}</td>
-                    {{-- <td><a href="{{Route('admin.trips.edit',$value->id)}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
-                    </a></td> --}}
+                  
                     <td>
                         <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                             @method('delete')
