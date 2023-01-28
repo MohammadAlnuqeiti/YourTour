@@ -13,6 +13,7 @@ class PackageDetailsController extends Controller
     {
 
         $trips = Trip::where('category_id',$id)->get();
+        // dd( $trips);
 
         $data = [];
         foreach ($trips as $trip) {
@@ -28,9 +29,8 @@ class PackageDetailsController extends Controller
 
 
             ];
-// dd( $data);
-        return view('publicUser.bali',['data'=>$data]);
 
-    }
+        }
+        return view('publicUser.bali',['data'=>$data]);
 }
 }

@@ -18,7 +18,7 @@
         <div class="row">
 
             <div class="col-md-6 col-sm-12">
-                <?php $img=$data[0]['image']?>
+                <?php $img=$data[0]['image2']?>
                 {{-- <img src="{{URL::asset("storage/image/$img")}}" alt="" style="width: 75px"> --}}
                 <img class="img-fluid details-img" src="{{URL::asset("storage/image/$img")}}" alt="" height="575px">
             </div>
