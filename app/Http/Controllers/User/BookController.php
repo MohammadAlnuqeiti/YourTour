@@ -57,7 +57,7 @@ class BookController extends Controller
 
         ]);
 
-        return response('ok');
+        return redirect()->route('user.profile.index');
 
     }
 }
