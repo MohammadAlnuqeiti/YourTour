@@ -116,7 +116,7 @@ edit trips
           </div>
           <!-- /.card -->
     </div>
-  </div>
+  {{-- </div> --}}
   <!-- /.row -->
 @endsection
 

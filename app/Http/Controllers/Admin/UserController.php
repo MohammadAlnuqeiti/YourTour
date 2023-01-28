@@ -75,7 +75,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -112,4 +112,5 @@ class UserController extends Controller
         User::findOrfail($id)->delete();
         return redirect()->route('admin.users.index');
     }
+   
 }
