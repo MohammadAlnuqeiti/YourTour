@@ -100,7 +100,8 @@ unset($__errorArgs, $__bag); ?>"><br><br>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
            
-          </div> </form>
+          </div> 
+        </form>
           <!-- /.card -->
     </div>
   </div>
