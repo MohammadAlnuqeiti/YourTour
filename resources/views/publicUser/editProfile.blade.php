@@ -14,6 +14,11 @@
 <div class="container">
     <div class="main-body">
         <h3>User profile</h3>
+         <form action="{{route('user.profile.update',4)}}" method="POST" enctype="multipart/form-data">
+
+                @method('PUT')
+
+                @csrf
         <div class="row">
             <div class="col-lg-4">
                 <div class="card">
@@ -21,19 +26,16 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                             <div class="mt-3">
-                                <h4>John Doe</h4>
+                                <h4>{{auth()->user()->name}}</h4>
                             </div>
+                            
                         </div>
                         <hr class="my-4">
                        
                     </div>
                 </div>
             </div>
-            <form action="{{route('user.profile.update',4)}}" method="POST" enctype="multipart/form-data">
-
-                @method('PUT')
-
-                @csrf
+           
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
@@ -77,7 +79,7 @@
                                 <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
                             </div>
                         </div> --}}
-                        <div class="row">
+                        {{-- <div class="row"> --}}
                             {{-- <div class="col-sm-3">
                             <div class="col-sm-9 text-secondary">
                                 <input type="submit" class="btn btn-primary px-4" value="Save Changes">
@@ -86,7 +88,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                   {{-- <a class="btn btn-info "  href="{{route('user.profile.edit',1)}}" style="border-radius: 10px">Save</a> --}}
-                                  <button type="submit" class="btn btn-primary">save</button>
+                                  <button type="submit" class="btn btn-info" style="border-radius: 10px">Save Changes</button>
                                 </div>
                               </div>
                         </form>
