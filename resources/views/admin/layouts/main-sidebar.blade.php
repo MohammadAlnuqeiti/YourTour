@@ -83,17 +83,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.users.index')}}" class="nav-link  @yield('Profile')">
+            <a href="{{route('admin.show.admin')}}" class="nav-link  @yield('Profile')">
               <i class="nav-icon fa-solid fa-address-card"></i>
               <p>
-                Profile
-                {{-- <span class="right badge badge-danger">user</span> --}}
+                Admin 
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{route('logout')}}" class="nav-link">
-             
+
               <i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>
               <p class="text">logout</p>
             </a>

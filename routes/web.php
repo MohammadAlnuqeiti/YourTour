@@ -44,6 +44,7 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth','verified','admin'])->name('admin.')->prefix('admin')->group(function()
 {
 Route::get('/',[AdminController::class,'index'])->name('index');
+Route::get('/admin',[AdminController::class,'admin'])->name('show.admin');
 Route::resource('/users',UserController::class);
 Route::resource('/categories',CatregoryController::class);
 Route::resource('/trips',TripController::class);

@@ -140,6 +140,7 @@ unset($__errorArgs, $__bag); ?>
           <!-- /.card -->
     </div>
   </div>
+  </div>
   <!-- /.row -->
 <?php $__env->stopSection(); ?>
 

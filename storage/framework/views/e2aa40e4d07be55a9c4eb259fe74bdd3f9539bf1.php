@@ -31,47 +31,69 @@ Profile
 
 <?php $__env->startSection('content'); ?>
 
+ <!-- /.row -->
+ <div class="row container m-auto">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Admin controls</h3>
+
+          <div class="card-tools">
+            <div class="input-group input-group-sm" style="width: 90px;">
 
 
-<section class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 m-auto">
 
-          <!-- Profile Image -->
-          <div class="card card-primary card-outline">
-            <div class="card-body box-profile">
-              <div class="text-center">
-                <img class="profile-user-img img-fluid img-circle"
-                     src="../../dist/img/user4-128x128.jpg"
-                     alt="User profile picture">
+
+                
+
+
               </div>
-
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-              <p class="text-muted text-center">Software Engineer</p>
-
-              <ul class="list-group list-group-unbordered mb-3">
-                <li class="list-group-item">
-                  <b>Followers</b> <a class="float-right">1,322</a>
-                </li>
-                <li class="list-group-item">
-                  <b>Following</b> <a class="float-right">543</a>
-                </li>
-                <li class="list-group-item">
-                  <b>Friends</b> <a class="float-right">13,287</a>
-                </li>
-              </ul>
-
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
         </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0" style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Password</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+                <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value->is_admin==1): ?>
+                <tr>
+                    <td><?php echo e($value->id); ?></td>
+                    <td><?php echo e($value->name); ?></td>
+                    <td><?php echo e($value->email); ?></td>
+                    <td><?php echo e($value->phone); ?></td>
+                    <td><?php echo e($value->password); ?></td>
+                    
+
+                    
+
+                </tr>
+
+                <?php endif; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
       </div>
+      <!-- /.card -->
     </div>
-    
+  </div>
+  <!-- /.row -->
+
           <?php $__env->stopSection(); ?>
 
           <?php $__env->startSection('script'); ?>
@@ -106,4 +128,5 @@ Profile
     });
   </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/profile/show.blade.php ENDPATH**/ ?>

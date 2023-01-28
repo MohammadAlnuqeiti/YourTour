@@ -13,12 +13,9 @@ class PublicUserController extends Controller
 
 
         return view('publicUser.home',['data'=>$data]);
-        
-       
+
+
 }
 
-    // public function show($id){
-
-    //     return view('publicUser.home');
-    // }
+ 
 }

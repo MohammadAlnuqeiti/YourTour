@@ -101,7 +101,7 @@ edit trips
           </div>
           <!-- /.card -->
     </div>
-  </div>
+  
   <!-- /.row -->
 <?php $__env->stopSection(); ?>
 
