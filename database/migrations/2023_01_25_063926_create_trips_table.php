@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('short_description');
             $table->text('long_description');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('image2')->nullable();
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->integer('guest_number')->default(1);
             $table->decimal('price');

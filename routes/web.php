@@ -54,7 +54,7 @@ Route::resource('/reservation',ReservationController::class);
 
 //  route user
     // Route::get('/search', 'SearchController@search')->name('search');
-  
+
 Route::prefix('user')->name('user.')->group(function () {
 
 
@@ -81,8 +81,8 @@ Route::resource('/profile',ProfileUserController::class);
 Route::get('/package_details/{id}',[PackageDetailsController::class,'index'])->name('package.details');
 
 Route::get('/trip_details/{id}',[TripsDetailsController::class,'index'])->name('trip.details');
-Route::get('/booking/{id}',[BookController::class,'index'])->name('book');
-Route::get('/booking/create/{id}',[BookController::class,'create'])->name('book.create');
+Route::get('/booking/{id}',[BookController::class,'index'])->name('book')->middleware('CheckLogin');
+Route::get('/booking/create/{id}',[BookController::class,'create'])->name('book.create')->middleware('CheckLogin');
 
 });
 require __DIR__.'/auth.php';

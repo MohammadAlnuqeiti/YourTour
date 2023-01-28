@@ -33,21 +33,30 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="First Name" name="first_name">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="First Name" name="first_name" value="{{ old('first_name')}}" class="@error('first_name') is-invalid @enderror">
                                     <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="user_id" value="{{ Auth::user()->id }}">
                                     <label for="name">First Name</label>
+                                    @error('first_name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                   @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Last Name" name="last_name">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Last Name" name="last_name" value="{{ old('last_name')}}" class="@error('last_name') is-invalid @enderror">
                                     <label for="name">Last Name</label>
+                                    @error('last_name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                   @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Phone Number" name="phoneNumber">
+                                    <input type="text" class="form-control bg-transparent" id="name" placeholder="Phone Number" name="phoneNumber" value="{{ old('phoneNumber')}}" class="@error('phoneNumber') is-invalid @enderror">
                                     <label for="name">Phone Number</label>
+                                    @error('phoneNumber')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                   @enderror
                                 </div>
                             </div>
                             @if($data->guest_number==1)
@@ -61,21 +70,27 @@
                             @if($data->guest_number!=1)
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="{{$data->guest_number}}" name="guest_number">
+                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="{{$data->guest_number}}" name="guest_number" value="{{ old('guest_number')}}">
                                 </div>
                             </div>
                             @endif
 
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email" name="email">
+                                    <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email" name="email" value="{{ old('email')}}" class="@error('email') is-invalid @enderror">
                                     <label for="email">Your Email</label>
+                                    @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                   @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" />
+                                    <input type="date" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" value="{{ old('res_date')}}" class="@error('res_date') is-invalid @enderror" />
                                     <label for="datetime">Date</label>
+                                    @error('res_date')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                   @enderror
                                 </div>
                             </div>
                             {{-- <div class="col-md-6">
@@ -90,7 +105,7 @@
                             </div> --}}
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="commint"></textarea>
+                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="commint" value="{{ old('commint')}}"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>

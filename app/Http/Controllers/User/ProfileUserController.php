@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Reservation;
+
 use App\Models\User;
 
 
@@ -16,10 +18,33 @@ class ProfileUserController extends Controller
      */
     public function index()
     {
-        return view('publicUser.profile');
+        $id=auth()->user()->id;
+        $reservations = Reservation::where('user_id',7)->get();
+        // dd($reservations);
+        $data = [];
+        foreach ($reservations as $reservation) {
+            $data[] = [
+                'id' => $reservation->id,
+                // 'first_name' => $reservation->first_name,
+                // 'last_name' => $reservation->last_name,
+                // 'phoneNumber' => $reservation->phoneNumber,
+                // 'email'=>$reservation->email,
+                'number_of_guest' => $reservation->number_of_guest,
+                'res_date' => $reservation->res_date,
+                'price' => $reservation->price,
+                'status' => $reservation->status,
+                'trip' => isset($reservation->trip) ? $reservation->trip->name : "",
+                'trip_image' => isset($reservation->trip) ? $reservation->trip->image : "",
+                // 'user' => isset($reservation->user) ? $reservation->user->name : "",
 
+
+            ];
+
+        }
+        // dd($data);
+
+return view('publicUser.profile',['data'=>$data]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -94,6 +119,7 @@ class ProfileUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reservation::findOrfail($id)->delete();
+        return redirect()->route('user.profile.index');
     }
 }

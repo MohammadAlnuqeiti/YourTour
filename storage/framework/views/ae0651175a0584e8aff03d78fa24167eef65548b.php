@@ -69,7 +69,7 @@
 
                     <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details',1)); ?>">
                         <div class="card" style="width: 20rem;height: 25rem;">
-                            <img class="card-img-top"  style="height: 15rem; padding: 0.5rem;" src=" <?php echo e(asset("storage/image/".$value->image)); ?>" alt="Card image cap">
+                            <img class="card-img-top"  style="height: 15rem; padding: 0.5rem;" src="<?php echo e(asset("storage/image/".$value->image)); ?>" alt="Card image cap">
                             <div class="card-body">
 
                             <h3><?php echo e($value->name); ?></h3>
