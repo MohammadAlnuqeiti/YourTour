@@ -41,7 +41,7 @@ Category
             <div class="input-group input-group-sm" style="width: 100px;">
 
 
-         <button type="button" class="btn btn-block bg-gradient-primary btn-sm"><a href="<?php echo e(route('admin.categories.create')); ?>">Add new category</a></button>
+              <a href="<?php echo e(route('admin.categories.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
 
    
               </div>
