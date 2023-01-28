@@ -46,7 +46,9 @@ class TripController extends Controller
      */
     public function create()
     {
-        return view('admin.tripsTable.create');
+        $category=Category::all();
+
+        return view('admin.tripsTable.create',['category'=>$category]);
 
     }
 

@@ -19,7 +19,7 @@ class ProfileUserController extends Controller
     public function index()
     {
         $id=auth()->user()->id;
-        $reservations = Reservation::where('user_id',7)->get();
+        $reservations = Reservation::where('user_id',$id)->get();
         // dd($reservations);
         $data = [];
         foreach ($reservations as $reservation) {
@@ -108,7 +108,7 @@ return view('publicUser.profile',['data'=>$data]);
         // $data->image = $photoName;
         $profile->save();
         // return view('publicUser.profile');
-        return response('ok');
+        return redirect()->route('user.profile.index');
     }
 
     /**

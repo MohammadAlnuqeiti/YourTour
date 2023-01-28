@@ -65,7 +65,7 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="<?php echo e(route('user.profile.edit',4)); ?>" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-info "  href="<?php echo e(route('user.profile.edit',auth()->user()->id)); ?>" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@
                         <p>status : <?php echo e($value['status']); ?></p>
                         
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
-                            <a href="<?php echo e(route('user.trip.details',2)); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                            <a href="<?php echo e(route('user.trip.details',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                             <form action="<?php echo e(Route('user.profile.destroy',$value['id'])); ?>" method="post">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>

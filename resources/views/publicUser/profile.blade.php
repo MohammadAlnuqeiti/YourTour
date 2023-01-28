@@ -65,7 +65,7 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="{{route('user.profile.edit',4)}}" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-info "  href="{{route('user.profile.edit',auth()->user()->id)}}" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                         <p>status : {{$value['status']}}</p>
                         {{-- <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p> --}}
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
-                            <a href="{{route('user.trip.details',2)}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                            <a href="{{route('user.trip.details',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                             <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post">
                                 @method('delete')
                                 @csrf

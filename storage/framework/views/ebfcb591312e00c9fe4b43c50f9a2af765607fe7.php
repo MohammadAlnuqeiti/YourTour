@@ -26,11 +26,11 @@
 
                         <?php $img=$value['image']?>
 
-                        <img class="img-fluid" src="<?php echo e(asset("storage/image/$img")); ?>" alt="">
+                        <img class="img-fluid" src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="">
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['category']); ?></small>
-
+                        
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0"><?php echo e($value['price']); ?> JD</h3>
@@ -43,7 +43,7 @@
                         </div>
                         <p><?php echo e($value['short_description']); ?></p>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="<?php echo e(route('user.trip.details',2)); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="<?php echo e(route('user.trip.details',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                             <a href="<?php echo e(route('user.book',$value['id'])); ?>" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-
+                        
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0">$139.00</h3>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-
+                        
                     </div>
                     <div class="text-center p-4">
                         <h3 class="mb-0">$189.00</h3>

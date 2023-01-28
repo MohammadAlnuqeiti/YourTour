@@ -15,7 +15,7 @@
         <div class="booking p-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-6 text-white">
-                    <h6 class="text-white text-uppercase">Booking  <?php echo e($data->guest_number); ?></h6>
+                    <h6 class="text-white text-uppercase">Booking</h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
                     <p class="mb-4">Reconnect with yourself and take time away from your hectic life.
 
@@ -166,7 +166,7 @@ unset($__errorArgs, $__bag); ?>
                             
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="commint" value="<?php echo e(old('commint')); ?>"></textarea>
+                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="<?php echo e(old('comment')); ?>"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>

@@ -14,6 +14,11 @@
 <div class="container">
     <div class="main-body">
         <h3>User profile</h3>
+         <form action="<?php echo e(route('user.profile.update',auth()->user()->id)); ?>" method="POST" enctype="multipart/form-data">
+
+                <?php echo method_field('PUT'); ?>
+
+                <?php echo csrf_field(); ?>
         <div class="row">
             <div class="col-lg-4">
                 <div class="card">
@@ -21,19 +26,16 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                             <div class="mt-3">
-                                <h4>John Doe</h4>
+                                <h4><?php echo e(auth()->user()->name); ?></h4>
                             </div>
+
                         </div>
                         <hr class="my-4">
-                       
+
                     </div>
                 </div>
             </div>
-            <form action="<?php echo e(route('user.profile.update',4)); ?>" method="POST" enctype="multipart/form-data">
 
-                <?php echo method_field('PUT'); ?>
-
-                <?php echo csrf_field(); ?>
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
@@ -63,12 +65,12 @@
                         </div>
                         
                         
-                        <div class="row">
+                        
                             
                             <div class="row">
                                 <div class="col-sm-12">
                                   
-                                  <button type="submit" class="btn btn-primary">save</button>
+                                  <button type="submit" class="btn btn-info" style="border-radius: 10px">Save Changes</button>
                                 </div>
                               </div>
                         </form>

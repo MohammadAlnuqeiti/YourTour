@@ -67,9 +67,9 @@ Trip
                 <div class="form-group">
                     <label for="exampleSelectRounded0">Category <code></code></label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select">
-                      <option value="1">Aqaba</option>
-                      <option value="2">petra</option>
-                      <option value="3">amman</option>
+                        <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($value->id); ?>"><?php echo e($value->name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                   </div>
                 <div class="form-group">
