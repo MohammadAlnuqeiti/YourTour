@@ -67,9 +67,9 @@ Trip
                 <div class="form-group">
                     <label for="exampleSelectRounded0">Category <code></code></label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select">
-                      <option value="1">Aqaba</option>
-                      <option value="2">petra</option>
-                      <option value="3">amman</option>
+                        @foreach($category as $value)
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                        @endforeach
                     </select>
                   </div>
                 <div class="form-group">
@@ -96,8 +96,8 @@ Trip
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-           
-          </div> 
+
+          </div>
         </form>
           <!-- /.card -->
     </div>

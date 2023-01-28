@@ -14,7 +14,7 @@
 <div class="container">
     <div class="main-body">
         <h3>User profile</h3>
-         <form action="{{route('user.profile.update',4)}}" method="POST" enctype="multipart/form-data">
+         <form action="{{route('user.profile.update',auth()->user()->id)}}" method="POST" enctype="multipart/form-data">
 
                 @method('PUT')
 
@@ -28,14 +28,14 @@
                             <div class="mt-3">
                                 <h4>{{auth()->user()->name}}</h4>
                             </div>
-                            
+
                         </div>
                         <hr class="my-4">
-                       
+
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">

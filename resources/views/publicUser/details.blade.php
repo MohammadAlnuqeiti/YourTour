@@ -57,7 +57,7 @@
             </div>
         </div>
         {{-- @endforeach --}}
-        <div class="row">
+        {{-- <div class="row">
 
             <div class="col-md-6 col-sm-12">
                 <img class="img-fluid details-img" src="/users/img/Candi_Resort.png" alt="">
@@ -68,16 +68,13 @@
                     <h3>Candi Resort</h3>
                     <hr>
                     <p class="product-price">00. $</p>
-                    {{-- <form class="add-inputs" method="post">
-                     <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" value="1" min="1" max="10">
-                        <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Add to cart</button>
-                    </form> --}}
+
                     <form action="{{route('user.book',1)}}" class="add-inputs" method="get">
-                    {{-- @method('GET') --}}
+                    @method('GET')
                         @csrf
-                        {{-- <a href="{{route('user.book')}}"> --}}
+                        <a href="{{route('user.book')}}">
                             <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Book Now</button>
-                        {{-- </a> --}}
+                        </a>
                     </form>
                     <div style="clear:both"></div>
 
@@ -98,7 +95,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
         <!-- End row -->
     </div>
     </div>

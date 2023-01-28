@@ -49,13 +49,14 @@ class BookController extends Controller
             'email' => $request->email,
             'number_of_guest' => $request->guest_number,
             'res_date' => $request->res_date,
+            'comment' => $request->comment,
             'price' =>   $price,
             'status' => 'Pending',
             'trip_id' => $id,
 
 
         ]);
-        // return view('publicUser.book');
+        
         return response('ok');
 
     }
