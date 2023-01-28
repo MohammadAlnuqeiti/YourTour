@@ -180,7 +180,30 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </div>
-<!-- Booking Start -->
+
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="booking p-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6 text-white">
+                    <h6 class="text-white text-uppercase"></h6>
+                    <h1 class="text-white mb-4"></h1>
+                    <p class="mb-4"></p>
+                    <p class="mb-4"></p>
+                   
+                </div>
+                <div class="col-md-6">
+                    <h1 class="text-white mb-4"></h1>
+                   
+                
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
