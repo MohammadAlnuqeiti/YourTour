@@ -20,7 +20,7 @@
 
         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
                 <div class="package-item">
                     <div class="overflow-hidden">
 
@@ -41,7 +41,7 @@
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>
                         </div>
-                        <p><?php echo e($value['short_description']); ?></p>
+                        <p style="min-height: 95px;"><?php echo e($value['short_description']); ?></p>
                         <div class="d-flex justify-content-center mb-2">
                             <a href="<?php echo e(route('user.trip.details',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                             <a href="<?php echo e(route('user.book',$value['id'])); ?>" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
