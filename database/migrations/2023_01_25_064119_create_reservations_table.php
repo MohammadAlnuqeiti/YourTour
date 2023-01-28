@@ -21,10 +21,11 @@ return new class extends Migration
             $table->string('email');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('trip_id')->constrained('trips')->onDelete('cascade');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('Pending');
             $table->integer('number_of_guest')->default(1);
-            $table->text('commint')->nullable();
+            $table->text('comment')->nullable();
             $table->date('res_date');
+            $table->date('res_stop')->nullable();
             $table->decimal('price');
             $table->softDeletes();
             $table->timestamps();
