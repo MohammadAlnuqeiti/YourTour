@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
+use App\Models\Trip;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,13 +15,31 @@ class BookController extends Controller
 
     public function index($id)
     {
-        return view('publicUser.book',['id'=>$id]);
+        $data = Trip::findOrfail($id);
+        return view('publicUser.book',['data'=>$data]);
 
     }
     public function create(Request $request , $id)
     {
+
+        $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phoneNumber' => ['required', 'max:10'],
+            'res_date' => ['required'],
+        ]);
+
+
+        $data = Trip::findOrfail($id);
+        if(  $data->guest_number ==1){
+            $price =$request->guest_number*$data->price;
+        }else{
+            $price=$data->price;
+        }
+// dd($price);
         $user=$request->user_id;
-        // dd($request->user_id);
+        // dd($request->guest_number);
         Reservation::create([
 
             'first_name' => $request->first_name,
@@ -30,7 +49,7 @@ class BookController extends Controller
             'email' => $request->email,
             'number_of_guest' => $request->guest_number,
             'res_date' => $request->res_date,
-            'price' => 55,
+            'price' =>   $price,
             'status' => 'Pending',
             'trip_id' => $id,
 

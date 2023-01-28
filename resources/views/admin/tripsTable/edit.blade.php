@@ -69,10 +69,10 @@ edit trips
                 </div>
                 <div class="form-group">
                     <label for="exampleSelectRounded0">Category <code></code></label>
-                    <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select" >
-                      <option value="1">Aqaba</option>
-                      <option value="2">petra</option>
-                      <option value="3">amman</option>
+                    <select class="custom-select rounded-0" id="exampleSelectRounded0" name="select">
+                        @foreach($category as $value)
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                        @endforeach
                     </select>
                   </div>
                   <div class="form-group">
@@ -89,7 +89,7 @@ edit trips
                       </div>
                     </div>
                   </div>
-{{-- 
+{{--
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">

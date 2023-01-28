@@ -22,8 +22,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('trip_id')->constrained('trips')->onDelete('cascade');
             $table->string('status')->default('pending');
-            $table->integer('number_of_guest');
-            $table->dateTime('res_date');
+            $table->integer('number_of_guest')->default(1);
+            $table->text('commint')->nullable();
+            $table->date('res_date');
             $table->decimal('price');
             $table->softDeletes();
             $table->timestamps();
