@@ -29,8 +29,8 @@
                     <hr>
                     <p class="product-price"><?php echo e($data[0]['price']); ?> JD</p>
                     
-                    <form action="<?php echo e(route('user.book',$data[0]['id'])); ?>" class="add-inputs" method="get">
-                    
+                    <form action="<?php echo e(route('user.book',$data[0]['id'])); ?>" class="add-inputs" method="post">
+                    <?php echo method_field('GET'); ?>
                         <?php echo csrf_field(); ?>
                         
                             <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Book Now</button>

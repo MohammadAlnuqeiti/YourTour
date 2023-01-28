@@ -19,7 +19,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="/users/img/user.webp" alt="Admin" class="rounded-circle" width="150">
+                    <img src="{{asset("storage/image/".auth()->user()->image)}}" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{auth()->user()->name}}</h4>
                       {{-- <p class="text-secondary mb-1">Full Stack Developer</p>
@@ -61,8 +61,8 @@
                     </div>
                   </div>
                   <hr>
-                  
-        
+
+
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info "  href="{{route('user.profile.edit',4)}}" style="border-radius: 10px">Edit</a>
@@ -92,33 +92,40 @@
             <h1 class="mb-5">My Trips</h1>
         </div>
         <div class="row g-4 justify-content-center">
+            @foreach($data as $value)
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="/users/img/bali1.png" alt="">
+                        {{-- {{dd($value['trip_image']);}} --}}
+                        <img class="img-fluid" src="{{asset("storage/image/".$value['trip_image'])}}" alt="">
+                        {{-- <img class="img-fluid" src="/users/img/bali1.png" alt=""> --}}
                     </div>
                     <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$value['trip']}}</small>
                         {{-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
                     </div>
                     <div class="text-center p-4">
-                        <h3 class="mb-0">$149.00</h3>
-                        {{-- <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div> --}}
-                        <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p>
-                        <div class="d-flex justify-content-center mb-2">
+                        <h3 class="mb-0">{{$value['price']}} Jd</h3>
+
+                        <p>Date : {{$value['res_date']}}</p>
+                        <p>number_of_guest : {{$value['number_of_guest']}}</p>
+                        <p>status : {{$value['status']}}</p>
+                        {{-- <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p> --}}
+                        <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
                             <a href="{{route('user.trip.details',2)}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                            <a href="/book" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a>
+                            <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-primary px-3"  style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</button>
+                            </form>
+                            {{-- <a href="{{route('user.profile.destroy',$value['id'])}}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a> --}}
                         </div>
                     </div>
                 </div>
             </div>
+
+            @endforeach
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="package-item">
                     <div class="overflow-hidden">

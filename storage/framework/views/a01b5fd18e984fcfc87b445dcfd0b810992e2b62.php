@@ -43,7 +43,6 @@ Reservation
               <?php echo method_field('PUT'); ?>
 
               <?php echo csrf_field(); ?>
-
                 <div class="form-group">
                     <label for="exampleSelectRounded0">Status</label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0" name="status">
@@ -52,7 +51,7 @@ Reservation
                       <option value="Rejected">Rejected</option>
                     </select>
                   </div>
-               
+
               <!-- /.card-body -->
 
               <div class="card-footer">
@@ -98,4 +97,5 @@ Reservation
     });
   </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/reservationTable/edit.blade.php ENDPATH**/ ?>

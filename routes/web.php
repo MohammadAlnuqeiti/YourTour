@@ -14,6 +14,7 @@ use App\Http\Controllers\User\PackageDetailsController;
 use App\Http\Controllers\User\TripsDetailsController;
 use App\Http\Controllers\User\BookController;
 use App\Http\Controllers\User\ProfileUserController;
+use App\Http\Controllers\User\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ Route::resource('/reservation',ReservationController::class);
 //---------------------------------------
 
 //  route user
-
+    // Route::get('/search', 'SearchController@search')->name('search');
 
 Route::prefix('user')->name('user.')->group(function () {
 
@@ -70,17 +71,18 @@ Route::get('/contact',function(){
 })->name('contact');
 
 Route::resource('/signup',RegisterUserController::class);
-
+Route::post('/search' , [Search::class , 'search'])->name('search');
 Route::get('/login',[LoginUserController::class,'index'])->name('login');
 Route::get('/login/check',[LoginUserController::class,'LoginPost'])->name('login.check');
 Route::get('/login/destroy',[LoginUserController::class,'destroy'])->name('login.destroy');
 
 Route::resource('/profile',ProfileUserController::class);
 
-Route::get('/package_details',[PackageDetailsController::class,'index'])->name('package.details');
+Route::get('/package_details/{id}',[PackageDetailsController::class,'index'])->name('package.details');
 
 Route::get('/trip_details/{id}',[TripsDetailsController::class,'index'])->name('trip.details');
-Route::get('/booking/{id}',[BookController::class,'index'])->name('book');
+Route::get('/booking/{id}',[BookController::class,'index'])->name('book')->middleware('CheckLogin');
+Route::get('/booking/create/{id}',[BookController::class,'create'])->name('book.create')->middleware('CheckLogin');
 
 });
 require __DIR__.'/auth.php';

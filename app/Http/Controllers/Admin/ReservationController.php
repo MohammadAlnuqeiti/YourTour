@@ -17,6 +17,7 @@ class ReservationController extends Controller
     {
 
         $reservations = Reservation::with('trip')->get();
+        // dd($reservations);
         $data = [];
         foreach ($reservations as $reservation) {
             $data[] = [
@@ -108,9 +109,9 @@ class ReservationController extends Controller
     {
 
         $data = Reservation::findOrfail($id);
-   
+
         $data->status = $request->status;
-      
+
 
         $data->save();
         //-------------------------------

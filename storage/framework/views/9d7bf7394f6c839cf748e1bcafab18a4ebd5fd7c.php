@@ -49,7 +49,7 @@ Reservation
                 <th>Last name</th>
                 <th>Phone No.</th>
                 <th>Email</th>
-                
+                <th>ID</th>
                 <th>Trip</th>
                 <th>Guest number</th>
                 <th>Reservation date</th>
@@ -69,7 +69,7 @@ Reservation
                     <td><?php echo e($value['last_name']); ?></td>
                     <td><?php echo e($value['phoneNumber']); ?></td>
                     <td><?php echo e($value['email']); ?></td>
-                    
+                    <td><?php echo e($value['user']); ?></td>
                     <td><?php echo e($value['trip']); ?></td>
                     <td><?php echo e($value['number_of_guest']); ?></td>
 

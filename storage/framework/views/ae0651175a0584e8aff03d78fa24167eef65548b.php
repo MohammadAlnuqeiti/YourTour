@@ -40,10 +40,15 @@
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
                         <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us</h1>
                         <p class="fs-4 text-white mb-4 animated slideInDown">When you can’t decide between two places, just go to both.</p>
+                        
                         <div class="position-relative w-75 mx-auto animated slideInDown">
-                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-                            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                            <form action="<?php echo e(route('user.search')); ?>" method="post">
+                                <?php echo csrf_field(); ?>
+                                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" name="search" placeholder="Search...">
+                                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                            </form>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -59,11 +64,12 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-around">
                  <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details')); ?>">
-                        <div class="card" style="width: 20rem;">
-                            <img class="card-img-top" src=" <?php echo e(asset("storage/image/".$value->image)); ?>" alt="Card image cap">
+
+                    <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="<?php echo e(route('user.package.details',1)); ?>">
+                        <div class="card" style="width: 20rem;height: 25rem;">
+                            <img class="card-img-top"  style="height: 15rem; padding: 0.5rem;" src="<?php echo e(asset("storage/image/".$value->image)); ?>" alt="Card image cap">
                             <div class="card-body">
 
                             <h3><?php echo e($value->name); ?></h3>
@@ -73,11 +79,7 @@
                         </div>
                     </a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    
-                
-                
-                
-                
+
             </div>
         </div>
     </div>
