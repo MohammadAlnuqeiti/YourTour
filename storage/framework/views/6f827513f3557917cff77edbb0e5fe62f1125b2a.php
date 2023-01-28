@@ -2,7 +2,7 @@
 
 
 <?php $__env->startSection('title'); ?>
-Category
+Trip
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -12,11 +12,11 @@ Category
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('section_title'); ?>
-Create new category
+Create new Trip
 <?php $__env->stopSection(); ?>
 
 
-<?php $__env->startSection('Category'); ?>
+<?php $__env->startSection('Trips'); ?>
 active
 <?php $__env->stopSection(); ?>
 
@@ -25,7 +25,7 @@ admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('title_page2'); ?>
-Category
+Trip
 <?php $__env->stopSection(); ?>
 
 
@@ -99,12 +99,12 @@ unset($__errorArgs, $__bag); ?>"><br><br>
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-            </form>
-          </div>
+           
+          </div> </form>
           <!-- /.card -->
     </div>
   </div>
-  </div>
+
   <!-- /.row -->
 <?php $__env->stopSection(); ?>
 

@@ -56,7 +56,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+</div>
 @include('admin.layouts.footer-scripts')
 </body>
 </html>

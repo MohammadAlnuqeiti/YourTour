@@ -2,7 +2,7 @@
 
 
 @section('title')
-Category
+Trip
 @endsection
 
 @section('css')
@@ -12,11 +12,11 @@ Category
 @endsection
 
 @section('section_title')
-Create new category
+Create new Trip
 @endsection
 
 
-@section('Category')
+@section('Trips')
 active
 @endsection
 
@@ -25,7 +25,7 @@ admin
 @endsection
 
 @section('title_page2')
-Category
+Trip
 @endsection
 
 
@@ -96,12 +96,13 @@ Category
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-            </form>
-          </div>
+           
+          </div> 
+        </form>
           <!-- /.card -->
     </div>
   </div>
-  </div>
+
   <!-- /.row -->
 @endsection
 
