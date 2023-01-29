@@ -93,6 +93,7 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($data as $value)
+           {{-- {{ dd($value)}} --}}
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
@@ -113,7 +114,7 @@
                         <p>status : {{$value['status']}}</p>
                         {{-- <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p> --}}
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
-                            <a href="{{route('user.trip.details',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                            <a href="{{route('user.book.edit',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                             <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post">
                                 @method('delete')
                                 @csrf
