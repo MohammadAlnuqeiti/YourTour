@@ -34,7 +34,7 @@
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
                     </div>
                     <div class="text-center p-4">
-                        <h3 class="mb-0">{{$value['price']}} JD</h3>
+                        <h3 class="mb-0">{{$value['price']}} JD / {{$value['guest_number']}} Person</h3>
                         <div class="mb-3">
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>
