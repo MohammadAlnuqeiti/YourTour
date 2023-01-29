@@ -12,6 +12,7 @@ use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\PackageDetailsController;
 use App\Http\Controllers\User\TripsDetailsController;
+use App\Http\Controllers\User\EditBookController;
 use App\Http\Controllers\User\BookController;
 use App\Http\Controllers\User\ProfileUserController;
 use App\Http\Controllers\User\Search;
@@ -85,5 +86,7 @@ Route::get('/trip_details/{id}',[TripsDetailsController::class,'index'])->name('
 Route::get('/booking/{id}',[BookController::class,'index'])->name('book')->middleware('CheckLogin');
 Route::get('/booking/create/{id}',[BookController::class,'create'])->name('book.create')->middleware('CheckLogin');
 
+Route::get('/profile/editPook/{id}',[EditBookController::class,'index'])->name('book.edit');
+Route::get('/profile/update/{id}',[EditBookController::class,'update'])->name('book.update');
 });
 require __DIR__.'/auth.php';

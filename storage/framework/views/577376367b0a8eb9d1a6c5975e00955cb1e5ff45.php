@@ -93,6 +93,7 @@
         </div>
         <div class="row g-4 justify-content-center">
             <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+           
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
@@ -112,7 +113,7 @@
                         <p>status : <?php echo e($value['status']); ?></p>
                         
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
-                            <a href="<?php echo e(route('user.trip.details',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                            <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                             <form action="<?php echo e(Route('user.profile.destroy',$value['id'])); ?>" method="post">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
