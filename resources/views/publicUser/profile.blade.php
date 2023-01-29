@@ -19,7 +19,7 @@
         {{ session()->get('success') }}
     </div>
 @endif
-    
+
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
@@ -177,6 +177,8 @@
 
 <!-- Package End -->
 @include('publicUser.footer')
+
+
 
 
 
