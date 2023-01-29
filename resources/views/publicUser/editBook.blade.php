@@ -35,6 +35,7 @@
                                 <div class="form-floating">
                                     <input type="text" class="form-control bg-transparent" id="name" placeholder="First Name" name="first_name" value="{{ $reservation[0]->first_name}}" class="@error('first_name') is-invalid @enderror">
                                     <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="user_id" value="{{ Auth::user()->id }}">
+                                    <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="trip_id" value="{{ $trip[0]->id }}">
                                     <label for="name">First Name</label>
                                     @error('first_name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -70,7 +71,7 @@
                             @if($trip[0]->guest_number!=1)
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="{{$reservation[0]->guest_number}}" name="guest_number" value="{{ old('guest_number')}}">
+                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="{{$trip[0]->guest_number}}" name="guest_number">
                                 </div>
                             </div>
                             @endif

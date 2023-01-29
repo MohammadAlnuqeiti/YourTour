@@ -32,6 +32,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
                                     <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="user_id" value="<?php echo e(Auth::user()->id); ?>">
+                                    <input type="hidden" class="form-control bg-transparent" id="name" placeholder="First Name" name="trip_id" value="<?php echo e($trip[0]->id); ?>">
                                     <label for="name">First Name</label>
                                     <?php $__errorArgs = ['first_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -102,7 +103,7 @@ unset($__errorArgs, $__bag); ?>
                             <?php if($trip[0]->guest_number!=1): ?>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="<?php echo e($reservation[0]->guest_number); ?>" name="guest_number" value="<?php echo e(old('guest_number')); ?>">
+                                    <input type="hidden" class="form-control bg-transparent" id="name"  min="1" value="<?php echo e($trip[0]->guest_number); ?>" name="guest_number">
                                 </div>
                             </div>
                             <?php endif; ?>

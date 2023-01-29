@@ -37,7 +37,7 @@ class ReservationController extends Controller
 
             ];
         }
-        $data= Reservation::all();
+        // $data= Reservation::all();
         return view('admin.reservationTable.show',compact('data'));
     }
 

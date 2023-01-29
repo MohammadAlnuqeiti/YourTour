@@ -27,7 +27,7 @@
                     <p class="product-category mb-0"><?php echo e($data[0]['category']); ?></p>
                     <h3><?php echo e($data[0]['name']); ?></h3>
                     <hr>
-                    <p class="product-price"><?php echo e($data[0]['price']); ?> JD</p>
+                    <p class="product-price"><?php echo e($data[0]['price']); ?> JD / <?php echo e($data[0]['guest_number']); ?> Person</p>
                     
                     <form action="<?php echo e(route('user.book',$data[0]['id'])); ?>" class="add-inputs" method="post">
                     <?php echo method_field('GET'); ?>

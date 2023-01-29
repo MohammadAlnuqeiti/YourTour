@@ -33,7 +33,7 @@
                         
                     </div>
                     <div class="text-center p-4">
-                        <h3 class="mb-0"><?php echo e($value['price']); ?> JD</h3>
+                        <h3 class="mb-0"><?php echo e($value['price']); ?> JD / <?php echo e($value['guest_number']); ?> Person</h3>
                         <div class="mb-3">
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>

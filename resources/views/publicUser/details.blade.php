@@ -27,7 +27,7 @@
                     <p class="product-category mb-0">{{$data[0]['category']}}</p>
                     <h3>{{$data[0]['name']}}</h3>
                     <hr>
-                    <p class="product-price">{{$data[0]['price']}} JD</p>
+                    <p class="product-price">{{$data[0]['price']}} JD / {{$data[0]['guest_number']}} Person</p>
                     {{-- <form class="add-inputs" method="post">
                      <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" value="1" min="1" max="10">
                         <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Add to cart</button>

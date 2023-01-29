@@ -26,6 +26,7 @@ class EditBookController extends Controller
     public function update(Request $request , $id)
     {
 
+        $trip_id=$request->trip_id;
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -56,9 +57,9 @@ class EditBookController extends Controller
         $data->comment = $request->comment;
         $data->price = $price;
         $data->status = 'Pending';
-        $data->trip_id = $id;
+        $data->trip_id = $trip_id;
         $data->save();
-     
+
 
         return redirect()->route('user.profile.index');
 

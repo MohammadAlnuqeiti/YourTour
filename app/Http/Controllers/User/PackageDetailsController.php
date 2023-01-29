@@ -22,7 +22,7 @@ class PackageDetailsController extends Controller
                 'name' => $trip->name,
                 'short_description' => $trip->short_description,
                 // 'long_description' => $trip->long_description,
-                // 'guest_number' => $trip->guest_number,
+                'guest_number' => $trip->guest_number,
                 'price' => $trip->price,
                 'image' => $trip->image,
                 'category' => isset($trip->category) ? $trip->category->name : "",
