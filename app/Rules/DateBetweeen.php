@@ -13,6 +13,7 @@ class DateBetweeen implements Rule
      * @return void
      */
     public function __construct()
+    
     {
         //
     }

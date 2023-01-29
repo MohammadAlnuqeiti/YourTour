@@ -21,7 +21,7 @@
                 @csrf
         <div class="row">
             <div class="col-lg-4">
-                <div class="card">
+                <div class="card" style="height: 244px;">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="{{asset("storage/image/".auth()->user()->image)}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-lg-8">
-                <div class="card">
+                <div class="card"style="height: 244px;">
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-sm-3">
@@ -78,12 +78,19 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 
 
 
 
+
+
+    <!-- My Trips -->
+
+      
+</div>
 
 <!-- Package End -->
 @include('publicUser.footer')

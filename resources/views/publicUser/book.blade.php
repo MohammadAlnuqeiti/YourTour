@@ -93,16 +93,7 @@
                                    @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-transparent" id="select1">
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 2</option>
-                                        <option value="3">Destination 3</option>
-                                    </select>
-                                    <label for="select1">Destination</label>
-                                </div>
-                            </div> --}}
+                      
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="{{ old('comment')}}"></textarea>

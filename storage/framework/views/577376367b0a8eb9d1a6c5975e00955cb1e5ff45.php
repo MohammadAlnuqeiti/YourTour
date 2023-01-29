@@ -1,3 +1,9 @@
+<head>
+  <script>
+    src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    </script>
+</head>
+
 <style>
     .navbar  {
         background-color: #14141F;
@@ -126,10 +132,12 @@
                         
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
                             <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                            <form action="<?php echo e(Route('user.profile.destroy',$value['id'])); ?>" method="post">
+                            <form action="<?php echo e(Route('user.profile.destroy',$value['id'])); ?>" method="post" class="delete-confirm">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-sm btn-primary px-3"  style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</button>
+                                <input name="_method" type="hidden" value="DELETE">
+                            <button type="submit" class="btn btn-sm btn-danger btn-flat show_confirm" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);" data-toggle="tooltip" title='Delete'>Delete</button>
+                                
                             </form>
                             
                         </div>
@@ -138,13 +146,38 @@
             </div>
 
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            
+         
         </div>
     </div>
 </div>
 
 <!-- Package End -->
 <?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+  
+</script>
+
 
 
 
