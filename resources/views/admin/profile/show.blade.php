@@ -31,47 +31,75 @@ Profile
 
 @section('content')
 
+ <!-- /.row -->
+ <div class="row container m-auto">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Admin controls</h3>
+
+          <div class="card-tools">
+            <div class="input-group input-group-sm" style="width: 90px;">
 
 
-<section class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 m-auto">
 
-          <!-- Profile Image -->
-          <div class="card card-primary card-outline">
-            <div class="card-body box-profile">
-              <div class="text-center">
-                <img class="profile-user-img img-fluid img-circle"
-                     src="../../dist/img/user4-128x128.jpg"
-                     alt="User profile picture">
+
+                {{-- <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a> --}}
+
+
               </div>
-
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-              <p class="text-muted text-center">Software Engineer</p>
-
-              <ul class="list-group list-group-unbordered mb-3">
-                <li class="list-group-item">
-                  <b>Followers</b> <a class="float-right">1,322</a>
-                </li>
-                <li class="list-group-item">
-                  <b>Following</b> <a class="float-right">543</a>
-                </li>
-                <li class="list-group-item">
-                  <b>Friends</b> <a class="float-right">13,287</a>
-                </li>
-              </ul>
-
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
         </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0" style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Password</th>
+                {{-- <th>is_admin</th> --}}
+                {{-- <th>Delete</th> --}}
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($data as $value)
+                @if($value->is_admin==1)
+                <tr>
+                    <td>{{$value->id}}</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->email	}}</td>
+                    <td>{{$value->phone	}}</td>
+                    <td>{{$value->password	}}</td>
+                    {{-- <td>{{$value->is_admin	}}</td> --}}
+
+                    {{-- <td>
+                        <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td> --}}
+
+                </tr>
+
+                @endif
+                @endforeach
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
       </div>
+      <!-- /.card -->
     </div>
-    
+  </div>
+  <!-- /.row -->
+
           @endsection
 
           @section('script')

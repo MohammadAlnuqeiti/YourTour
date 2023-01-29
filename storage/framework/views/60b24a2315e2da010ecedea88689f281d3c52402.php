@@ -84,17 +84,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo e(route('admin.users.index')); ?>" class="nav-link  <?php echo $__env->yieldContent('Profile'); ?>">
+            <a href="<?php echo e(route('admin.show.admin')); ?>" class="nav-link  <?php echo $__env->yieldContent('Profile'); ?>">
               <i class="nav-icon fa-solid fa-address-card"></i>
               <p>
-                Profile
-                
+                Admin 
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?php echo e(route('logout')); ?>" class="nav-link">
-             
+
               <i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>
               <p class="text">logout</p>
             </a>

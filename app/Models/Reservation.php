@@ -12,8 +12,10 @@ class Reservation extends Model
     use SoftDeletes;
 
 
-    protected $fillable = ['first_name', 'last_name', 'user_id','phoneNumber','email','number_of_guest','res_date','price','status','commint','trip_id'];
-
+    protected $fillable = ['first_name', 'last_name', 'user_id','phoneNumber','email','number_of_guest','res_date','price','status','comment','trip_id'];
+    protected $dates = [
+        'res_date'
+    ];
     public function trip()
     {
         return $this->belongsTo(Trip::class);

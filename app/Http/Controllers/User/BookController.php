@@ -5,6 +5,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
 use App\Models\Trip;
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -49,14 +51,16 @@ class BookController extends Controller
             'email' => $request->email,
             'number_of_guest' => $request->guest_number,
             'res_date' => $request->res_date,
+            'comment' => $request->comment,
             'price' =>   $price,
             'status' => 'Pending',
             'trip_id' => $id,
 
 
         ]);
-        // return view('publicUser.book');
-        return response('ok');
+
+        return redirect()->route('user.profile.index')->with('success','Book success');
 
     }
+    
 }

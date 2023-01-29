@@ -26,6 +26,7 @@ class TripsDetailsController extends Controller
                 'guest_number' => $trip->guest_number,
                 'price' => $trip->price,
                 'image' => $trip->image,
+                'image2' => $trip->image2,
                 'category' => isset($trip->category) ? $trip->category->name : "",
 
 

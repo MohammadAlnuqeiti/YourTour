@@ -15,7 +15,7 @@
         <div class="booking p-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-6 text-white">
-                    <h6 class="text-white text-uppercase">Booking  <?php echo e($data->guest_number); ?></h6>
+                    <h6 class="text-white text-uppercase">Booking</h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
                     <p class="mb-4">Reconnect with yourself and take time away from your hectic life.
 
@@ -142,7 +142,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" value="<?php echo e(old('res_date')); ?>" class="<?php $__errorArgs = ['res_date'];
+                                    <input type="text"  class="form-control bg-transparent datetimepicker-input" id="date_picker" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" value="<?php echo e(old('res_date')); ?>" class="<?php $__errorArgs = ['res_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -163,10 +163,10 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
-                            
+                      
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="commint" value="<?php echo e(old('commint')); ?>"></textarea>
+                                    <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="<?php echo e(old('comment')); ?>"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>
@@ -180,8 +180,63 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </div>
-<!-- Booking Start -->
+
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="booking p-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6 text-white">
+                    <h6 class="text-white text-uppercase"></h6>
+                    <h1 class="text-white mb-4"></h1>
+                    <p class="mb-4"></p>
+                    <p class="mb-4"></p>
+
+                </div>
+                <div class="col-md-6">
+                    <h1 class="text-white mb-4"></h1>
+
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script language="javascript">
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0');
+    // var yyyy = today.getFullYear();
+
+    // today = yyyy + '-' + mm + '-' + dd;
+    // $( "#date_picker" ).attr({
+    //     changeYear: true,
+    //     minDate: today,
+    //     maxDate: '+28D',
+    // });
+    $( function() {
+    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+  } );
+
+    // $('#date_picker').attr('min',today);
+    // date_picker.max = new Date().toISOString().split("m")[0];
+    // document.getElementsByName("date_picker")[0].setAttribute('max', today);
+
+    // $('#date_picker').attr('max','+1m');
+
+//   $("#date_picker").datepicker({
+//       minDate: -3,
+//       maxDate: "+1m"
+//   });
+
+</script>
 <?php /**PATH C:\xampp\htdocs\yourTour\resources\views/publicUser/book.blade.php ENDPATH**/ ?>

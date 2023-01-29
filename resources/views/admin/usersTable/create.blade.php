@@ -102,6 +102,7 @@ Category
           <!-- /.card -->
     </div>
   </div>
+  </div>
   <!-- /.row -->
 @endsection
 

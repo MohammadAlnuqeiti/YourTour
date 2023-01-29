@@ -1,3 +1,9 @@
+<head>
+  <script>
+    src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    </script>
+</head>
+
 <style>
     .navbar  {
         background-color: #14141F;
@@ -14,6 +20,16 @@
 <div class="container">
     <div class="main-body">
     <h3>User profile</h3>
+    @if(session()->get('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+@if(session()->get('danger'))
+<div class="alert alert-danger">
+    {{ session()->get('danger') }}
+</div>
+@endif
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
@@ -65,7 +81,7 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="{{route('user.profile.edit',4)}}" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-info "  href="{{route('user.profile.edit',auth()->user()->id)}}" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -93,6 +109,7 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($data as $value)
+           {{-- {{ dd($value)}} --}}
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
@@ -113,11 +130,13 @@
                         <p>status : {{$value['status']}}</p>
                         {{-- <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p> --}}
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
-                            <a href="{{route('user.trip.details',2)}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                            <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post">
+                            <a href="{{route('user.book.edit',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                            <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post" class="delete-confirm">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-sm btn-primary px-3"  style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</button>
+                                <input name="_method" type="hidden" value="DELETE">
+                            <button type="submit" class="btn btn-sm btn-danger btn-flat show_confirm" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);" data-toggle="tooltip" title='Delete'>Delete</button>
+                                {{-- <button type="submit" class="btn btn-sm btn-primary  px-3"  style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);" onclick="deleteConfirm(event)">{{ __('Delete') }}</button> --}}
                             </form>
                             {{-- <a href="{{route('user.profile.destroy',$value['id'])}}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a> --}}
                         </div>
@@ -126,66 +145,38 @@
             </div>
 
             @endforeach
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="package-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="/users/img/bali2.png" alt="">
-                    </div>
-                    <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-                        {{-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
-                    </div>
-                    <div class="text-center p-4">
-                        <h3 class="mb-0">$139.00</h3>
-                        {{-- <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div> --}}
-                        <p>The award-winning AYANA Resort and Spa, BALI is a world-class destination resort </p>
-                        <div class="d-flex justify-content-center mb-2">
-                            <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                            <a href="/book" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="package-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="/users/img/bali3.png" alt="">
-                    </div>
-                    <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Bali</small>
-                        {{-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
-                    </div>
-                    <div class="text-center p-4">
-                        <h3 class="mb-0">$189.00</h3>
-                        {{-- <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div> --}}
-                        <p>Discover a new type of mountain . Immersed in the middle of the jungle</p>
-                        <div class="d-flex justify-content-center mb-2">
-                            <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                            <a href="/book" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
         </div>
     </div>
 </div>
 
 <!-- Package End -->
 @include('publicUser.footer')
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+  
+</script>
+
 
 
 

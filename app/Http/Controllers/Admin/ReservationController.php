@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ReservationStoreRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
@@ -36,7 +37,8 @@ class ReservationController extends Controller
 
             ];
         }
-        return view('admin.reservationTable.show',['data'=>$data]);
+        // $data= Reservation::all();
+        return view('admin.reservationTable.show',compact('data'));
     }
 
     /**
@@ -55,22 +57,23 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReservationStoreRequest $request)
     {
-        Reservation::create([
+        // Reservation::create([
 
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phoneNumber' => $request->phoneNumber,
-            'email' => $request->email,
-            'number_of_guest' => $request->number_of_guest,
-            'res_date' => $request->res_date,
-            'price' => $request->price,
-            'status' => $request->status,
-            'trip_id' => $request->select,
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'phoneNumber' => $request->phoneNumber,
+        //     'email' => $request->email,
+        //     'number_of_guest' => $request->number_of_guest,
+        //     'res_date' => $request->res_date,
+        //     'price' => $request->price,
+        //     'status' => $request->status,
+        //     'trip_id' => $request->select,
 
 
-        ]);
+        // ]);
+        Reservation::create($request->validated());
 
         return redirect()->route('admin.reservation.index');
     }

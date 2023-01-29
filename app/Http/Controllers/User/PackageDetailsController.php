@@ -13,6 +13,7 @@ class PackageDetailsController extends Controller
     {
 
         $trips = Trip::where('category_id',$id)->get();
+        // dd( $trips);
 
         $data = [];
         foreach ($trips as $trip) {
@@ -21,16 +22,15 @@ class PackageDetailsController extends Controller
                 'name' => $trip->name,
                 'short_description' => $trip->short_description,
                 // 'long_description' => $trip->long_description,
-                // 'guest_number' => $trip->guest_number,
+                'guest_number' => $trip->guest_number,
                 'price' => $trip->price,
                 'image' => $trip->image,
                 'category' => isset($trip->category) ? $trip->category->name : "",
 
 
             ];
-// dd( $data);
-        return view('publicUser.bali',['data'=>$data]);
 
-    }
+        }
+        return view('publicUser.bali',['data'=>$data]);
 }
 }
