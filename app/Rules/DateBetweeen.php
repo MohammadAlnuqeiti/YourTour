@@ -27,7 +27,7 @@ class DateBetweeen implements Rule
     {
        $startDate= Carbon::parse($value);
        $endDate=Carbon::now()->addWeek();
-       
+
        return $value>= now() && $value <= $endDate;
     }
 
