@@ -18,8 +18,8 @@ class ProfileUserController extends Controller
      */
     public function index()
     {
-        $id=auth()->user()->id;
-        $reservations = Reservation::where('user_id',$id)->get();
+        $id = auth()->user()->id;
+        $reservations = Reservation::where('user_id', $id)->get();
         // dd($reservations);
         $data = [];
         foreach ($reservations as $reservation) {
@@ -39,11 +39,10 @@ class ProfileUserController extends Controller
 
 
             ];
-
         }
         // dd($data);
 
-return view('publicUser.profile',['data'=>$data]);
+        return view('publicUser.profile', ['data' => $data]);
     }
     /**
      * Show the form for creating a new resource.
@@ -86,7 +85,6 @@ return view('publicUser.profile',['data'=>$data]);
     public function edit($id)
     {
         return view('publicUser.editProfile');
-
     }
 
     /**
@@ -98,7 +96,7 @@ return view('publicUser.profile',['data'=>$data]);
      */
     public function update(Request $request, $id)
     {
-        $profile=User::findorFail($id);
+        $profile = User::findorFail($id);
         $profile->name = $request->name;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون
         $profile->email = $request->email;
         $profile->phone = $request->phone;
