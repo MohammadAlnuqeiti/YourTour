@@ -53,7 +53,39 @@
                 <h1 class="mb-5">Our Destinations</h1>
             </div>
             <div class="row g-4 justify-content-around">
-                 @foreach ($results as $value)
+                @foreach ($results as $value)
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+
+                            <?php $img=$value['image']?>
+
+                            <img class="img-fluid" src="{{URL::asset("storage/image/$img")}}" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$value['category']['name']}}</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">{{$value['price']}} JD / {{$value['guest_number']}} Person</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="min-height: 95px;">{{$value['short_description']}}</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="{{route('user.trip.details',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="{{route('user.book',$value['id'])}}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
+                 {{-- @foreach ($results as $value)
 
                     <a class="col-lg-3 col-sm-4 wow fadeInUp" data-wow-delay="0.1s" href="{{route('user.package.details',$value->id)}}">
                         <div class="card" style="width: 20rem;height: 25rem;">
@@ -66,7 +98,7 @@
 
                         </div>
                     </a>
-                    @endforeach
+                    @endforeach --}}
 
 
                 </div>

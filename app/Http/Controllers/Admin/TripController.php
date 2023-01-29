@@ -33,7 +33,6 @@ class TripController extends Controller
 
             ];
         }
-        // $data=Trip::all();
 
 
         return view('admin.tripsTable.show',['data'=>$data]);
