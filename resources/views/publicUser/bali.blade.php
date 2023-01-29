@@ -20,7 +20,7 @@
 
         @foreach ($data as $value)
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
                 <div class="package-item">
                     <div class="overflow-hidden">
 
@@ -42,7 +42,7 @@
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>
                         </div>
-                        <p>{{$value['short_description']}}</p>
+                        <p style="min-height: 95px;">{{$value['short_description']}}</p>
                         <div class="d-flex justify-content-center mb-2">
                             <a href="{{route('user.trip.details',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                             <a href="{{route('user.book',$value['id'])}}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
