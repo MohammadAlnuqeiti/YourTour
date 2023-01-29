@@ -26,6 +26,7 @@ class EditBookController extends Controller
     public function update(Request $request , $id)
     {
 
+
         $trip_id=$request->trip_id;
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
@@ -35,18 +36,23 @@ class EditBookController extends Controller
             'res_date' => ['required'],
         ]);
 
-
-        $data = Trip::findOrfail($id);
+        $data = Trip::findOrfail($trip_id);
         if(  $data->guest_number ==1){
             $price =$request->guest_number*$data->price;
         }else{
             $price=$data->price;
         }
-// dd($price);
         $user=$request->user_id;
         // dd($request->guest_number);
 
         $data = Reservation::findOrfail($id);
+        $date1=date_create(  $data->res_date );
+        $date2=date_create(now());
+        $diff=date_diff($date2,$date1);
+
+        // dd($diff->format("%d%"));
+
+        if($diff->format("%d%")>3){
         $data->first_name = $request->first_name ;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون
         $data->user_id = $user;
         $data->last_name = $request->last_name;
@@ -62,6 +68,11 @@ class EditBookController extends Controller
 
 
         return redirect()->route('user.profile.index');
+        }else{
+            return redirect()->back()->with('danger','not success');
+
+        }
+
 
     }
 
