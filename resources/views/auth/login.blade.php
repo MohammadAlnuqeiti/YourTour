@@ -1,6 +1,7 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ (asset('favicon-32x32.png')) }}">
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
