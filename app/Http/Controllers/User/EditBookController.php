@@ -36,7 +36,7 @@ class EditBookController extends Controller
         ]);
 
 
-        $data = Trip::findOrfail($id);
+        $data = Trip::findOrfail($trip_id);
         if(  $data->guest_number ==1){
             $price =$request->guest_number*$data->price;
         }else{

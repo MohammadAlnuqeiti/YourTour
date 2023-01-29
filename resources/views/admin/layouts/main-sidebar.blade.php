@@ -2,7 +2,7 @@
   <aside class="main-sidebar elevation-4" style="background-color:#dddddd">
     <!-- Brand Logo -->
     <a href="{{route('admin.index')}}" class="brand-link">
-      <img src="{{asset('assets/img/placeholder.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('assets/img/placeholder.png')}}" alt="AdminLTE Logo" class="brand-image  " style="opacity: .8">
       <span class="brand-text font-weight-medium" style="color:#3ED2A2 ">YourTour</span>
     </a>
 
