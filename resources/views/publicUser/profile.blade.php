@@ -20,6 +20,16 @@
 <div class="container">
     <div class="main-body">
     <h3>User profile</h3>
+    @if(session()->get('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+@if(session()->get('danger'))
+<div class="alert alert-danger">
+    {{ session()->get('danger') }}
+</div>
+@endif
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">

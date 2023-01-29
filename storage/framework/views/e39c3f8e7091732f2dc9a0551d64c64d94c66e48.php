@@ -63,10 +63,7 @@
                                 <input type="text" class="form-control" value="<?php echo e(auth()->user()->phone); ?>" name="phone">
                             </div>
                         </div>
-                        
-                        
-                        
-                            
+
                             <div class="row">
                                 <div class="col-sm-12">
                                   
@@ -88,12 +85,6 @@
 
 
 
-
-
-    <!-- My Trips -->
-
-      
-</div>
 
 <!-- Package End -->
 <?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

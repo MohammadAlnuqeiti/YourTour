@@ -133,7 +133,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date"  class="form-control bg-transparent datetimepicker-input" id="date_picker"  placeholder="Date" value="<?php echo e($reservation[0]->res_date); ?>" data-target="#date3" data-toggle="datetimepicker" name="res_date"  class="<?php $__errorArgs = ['res_date'];
+                                    <input type="text"  class="form-control bg-transparent datetimepicker-input" id="date_picker"  placeholder="Date" value="<?php echo e($reservation[0]->res_date); ?>" data-target="#date3" data-toggle="datetimepicker" name="res_date"  class="<?php $__errorArgs = ['res_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -198,14 +198,23 @@ unset($__errorArgs, $__bag); ?>
 
 
 <?php echo $__env->make('publicUser.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script language="javascript">
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear();
 
-    today = yyyy + '-' + mm + '-' + dd;
-    $('#date_picker').attr('min',today);
+
+$( function() {
+    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+  } );
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0');
+    // var yyyy = today.getFullYear();
+
+    // today = yyyy + '-' + mm + '-' + dd;
+    // $('#date_picker').attr('min',today);
 
 </script>
 <?php /**PATH C:\xampp\htdocs\yourTour\resources\views/publicUser/editBook.blade.php ENDPATH**/ ?>
