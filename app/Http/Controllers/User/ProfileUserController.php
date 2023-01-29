@@ -117,6 +117,7 @@ class ProfileUserController extends Controller
      */
     public function destroy($id)
     {
+        // dd($id);
         Reservation::findOrfail($id)->delete();
         return redirect()->route('user.profile.index');
     }
