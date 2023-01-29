@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date"  class="form-control bg-transparent datetimepicker-input" id="date_picker" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" value="{{ old('res_date')}}" class="@error('res_date') is-invalid @enderror" />
+                                    <input type="text"  class="form-control bg-transparent datetimepicker-input" id="date_picker" placeholder="Date" data-target="#date3" data-toggle="datetimepicker" name="res_date" value="{{ old('res_date')}}" class="@error('res_date') is-invalid @enderror" />
                                     <label for="datetime">Date</label>
                                     @error('res_date')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -129,14 +129,14 @@
                     <h1 class="text-white mb-4"></h1>
                     <p class="mb-4"></p>
                     <p class="mb-4"></p>
-                   
+
                 </div>
                 <div class="col-md-6">
                     <h1 class="text-white mb-4"></h1>
-                   
-                
+
+
                         </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -146,13 +146,35 @@
 
 
 @include('publicUser.footer')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script language="javascript">
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear();
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0');
+    // var yyyy = today.getFullYear();
 
-    today = yyyy + '-' + mm + '-' + dd;
-    $('#date_picker').attr('min',today);
+    // today = yyyy + '-' + mm + '-' + dd;
+    // $( "#date_picker" ).attr({
+    //     changeYear: true,
+    //     minDate: today,
+    //     maxDate: '+28D',
+    // });
+    $( function() {
+    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+  } );
+
+    // $('#date_picker').attr('min',today);
+    // date_picker.max = new Date().toISOString().split("m")[0];
+    // document.getElementsByName("date_picker")[0].setAttribute('max', today);
+
+    // $('#date_picker').attr('max','+1m');
+
+//   $("#date_picker").datepicker({
+//       minDate: -3,
+//       maxDate: "+1m"
+//   });
 
 </script>

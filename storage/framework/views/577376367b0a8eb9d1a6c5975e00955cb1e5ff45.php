@@ -14,6 +14,18 @@
 <div class="container">
     <div class="main-body">
     <h3>User profile</h3>
+    <?php if(session()->get('success')): ?>
+    <div class="alert alert-success">
+        <?php echo e(session()->get('success')); ?>
+
+    </div>
+<?php endif; ?>
+<?php if(session()->get('danger')): ?>
+<div class="alert alert-danger">
+    <?php echo e(session()->get('danger')); ?>
+
+</div>
+<?php endif; ?>
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
