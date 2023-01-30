@@ -74,6 +74,7 @@ Route::get('/about',function(){
 // })->name('contact');
 
  Route::get('/contact',[FeedController::class,'index'])->name('contact');
+ Route::get('/admin/contact',[FeedController::class,'show'])->name('contact.show');
  Route::get('/contact/create',[FeedController::class,'store'])->name('contact.create');
 
 Route::resource('/signup',RegisterUserController::class);

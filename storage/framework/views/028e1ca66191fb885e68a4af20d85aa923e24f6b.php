@@ -61,6 +61,7 @@ user
             </thead>
             <tbody>
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value->is_admin==0): ?>
 
                 <tr>
                     <td><?php echo e($value->id); ?></td>
@@ -78,6 +79,7 @@ user
                     </td>
 
                 </tr>
+                <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 

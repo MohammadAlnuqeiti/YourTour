@@ -64,6 +64,7 @@ user
             </thead>
             <tbody>
                 @foreach ($data as $value)
+                @if($value->is_admin==0)
 
                 <tr>
                     <td>{{$value->id}}</td>
@@ -81,6 +82,7 @@ user
                     </td>
 
                 </tr>
+                @endif
                 @endforeach
 
 

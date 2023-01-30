@@ -16,7 +16,7 @@ Profile
 @endsection
 
 
-@section('Profile')
+@section('message')
 active
 @endsection
 
@@ -44,7 +44,6 @@ Profile
 
 
 
-                {{-- <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a> --}}
 
 
               </div>
@@ -56,39 +55,30 @@ Profile
           <table class="table table-head-fixed text-nowrap" style="justify-content: center">
             <thead>
               <tr>
-                
+
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Subject</th>
                 <th>Message</th>
-                
+
                 {{-- <th>is_admin</th> --}}
                 {{-- <th>Delete</th> --}}
               </tr>
             </thead>
             <tbody>
                 @foreach ($data as $value)
-                @if($value->is_admin==1)
                 <tr>
-                    <td>{{$value->id}}</td>
                     <td>{{$value->name}}</td>
-                    <td>{{$value->email	}}</td>
-                    <td>{{$value->phone	}}</td>
-                    
-                    {{-- <td>{{$value->is_admin	}}</td> --}}
+                    <td>{{$value->email}}</td>
+                    <td>{{$value->phoneNumber	}}</td>
+                    <td>{{$value->subject	}}</td>
+                    <td>{{$value->message	}}</td>
 
-                    {{-- <td>
-                        <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
-                        </form>
-                    </td> --}}
+
 
                 </tr>
 
-                @endif
                 @endforeach
 
 

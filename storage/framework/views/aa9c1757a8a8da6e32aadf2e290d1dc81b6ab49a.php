@@ -1,12 +1,8 @@
-
+;
 
 
 <?php $__env->startSection('title'); ?>
-Trips
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('section_title'); ?>
-Trips Table
+Profile
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -15,7 +11,12 @@ Trips Table
 <link rel="stylesheet" href=".<?php echo e(asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')); ?>">
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('Trips'); ?>
+<?php $__env->startSection('section_title'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('message'); ?>
 active
 <?php $__env->stopSection(); ?>
 
@@ -24,81 +25,62 @@ admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('title_page2'); ?>
-Trips
+Profile
 <?php $__env->stopSection(); ?>
 
 
 <?php $__env->startSection('content'); ?>
- <!-- /.row -->
 
- <div class="row container-fluid m-auto" >
+ <!-- /.row -->
+ <div class="row container-fluid m-auto" style="text-align: center;">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Trips controls</h3>
+          <h3 class="card-title">Admin controls</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 100px;">
+            <div class="input-group input-group-sm" style="width: 90px;">
 
-                
 
-         <a href="<?php echo e(route('admin.trips.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add new trip</button></a>
 
-              
+
+
+
               </div>
             </div>
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" >
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0 "  style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap" style="justify-content: center">
             <thead>
               <tr>
-                <th>#</th>
+
                 <th>Name</th>
-                <th>Short description</th>
-                <th>Long description</th>
-                <th>image</th>
-                <th>Category</th>
-                <th>Guest number</th>
-                <th>price</th>
-                <th>edit</th>
-                <th>delete</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Subject</th>
+                <th>Message</th>
+
+                
+                
               </tr>
             </thead>
             <tbody>
-
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-
                 <tr>
-                    <td><?php echo e($value['id']); ?></td>
-                    <td><?php echo e($value['name']); ?></td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px"><?php echo e($value['short_description']); ?></td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px"><?php echo e($value['long_description']); ?></td>
-                    
+                    <td><?php echo e($value->name); ?></td>
+                    <td><?php echo e($value->email); ?></td>
+                    <td><?php echo e($value->phoneNumber); ?></td>
+                    <td><?php echo e($value->subject); ?></td>
+                    <td><?php echo e($value->message); ?></td>
 
-<?php $img=$value['image']?>
 
-                    <td><img src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="" style="width: 75px"></td>
-                    <td><?php echo e($value['category']); ?></td>
-                    <td><?php echo e($value['guest_number']); ?></td>
-                    <td><?php echo e($value['price']); ?></td>
-                    <td><a href="<?php echo e(Route('admin.trips.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
-                    </a></td>
-                    <td>
-                        <form action="<?php echo e(Route('admin.trips.destroy',$value['id'])); ?>" method="post">
-                            <?php echo method_field('delete'); ?>
-                            <?php echo csrf_field(); ?>
-                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
-                        </form>
-                    </td>
 
                 </tr>
 
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-              
 
             </tbody>
           </table>
@@ -109,9 +91,10 @@ Trips
     </div>
   </div>
   <!-- /.row -->
-<?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('script'); ?>
+          <?php $__env->stopSection(); ?>
+
+          <?php $__env->startSection('script'); ?>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables/jquery.dataTables.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')); ?>"></script>
@@ -144,4 +127,4 @@ Trips
   </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/tripsTable/show.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/messages/show.blade.php ENDPATH**/ ?>
