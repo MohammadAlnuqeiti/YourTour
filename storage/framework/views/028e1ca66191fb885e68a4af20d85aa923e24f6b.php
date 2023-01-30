@@ -1,4 +1,4 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
@@ -30,7 +30,7 @@ user
 
 <?php $__env->startSection('content'); ?>
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -44,36 +44,35 @@ user
 
                 <a href="<?php echo e(route('admin.users.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-             
+
               </div>
             </div>
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap" style="text-align: center;">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Password</th>
                 <th>is_admin</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value->is_admin==0): ?>
 
                 <tr>
                     <td><?php echo e($value->id); ?></td>
                     <td><?php echo e($value->name); ?></td>
                     <td><?php echo e($value->email); ?></td>
                     <td><?php echo e($value->phone); ?></td>
-                    <td><?php echo e($value->password); ?></td>
                     <td><?php echo e($value->is_admin); ?></td>
-                  
+
                     <td>
                         <form action="<?php echo e(Route('admin.users.destroy',$value->id)); ?>" method="post">
                             <?php echo method_field('delete'); ?>
@@ -83,6 +82,7 @@ user
                     </td>
 
                 </tr>
+                <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 

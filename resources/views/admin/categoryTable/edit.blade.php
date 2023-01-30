@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -66,7 +66,7 @@ Category
                     </div>
                   </div>
                 </div>
-            
+
               </div>
               <!-- /.card-body -->
 

@@ -11,6 +11,12 @@
 
 <!-- Booking Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <?php if(session()->get('danger')): ?>
+<div class="alert alert-danger">
+    <?php echo e(session()->get('danger')); ?>
+
+</div>
+<?php endif; ?>
     <div class="container col-md-9 ">
         <div class="booking p-5">
             <div class="row g-5 align-items-center">
@@ -18,6 +24,7 @@
                 <div class=" ">
                     <h1 class="text-white mb-4"> Edit Your Reservation</h1>
                     <form action="<?php echo e(route('user.book.update',$reservation[0]->id)); ?>" method="POST">
+
                         <?php echo method_field('GET'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="row g-3">
@@ -208,13 +215,7 @@ unset($__errorArgs, $__bag); ?>
 $( function() {
     $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
   } );
-    // var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0');
-    // var yyyy = today.getFullYear();
 
-    // today = yyyy + '-' + mm + '-' + dd;
-    // $('#date_picker').attr('min',today);
 
 </script>
 <?php /**PATH C:\xampp\htdocs\yourTour\resources\views/publicUser/editBook.blade.php ENDPATH**/ ?>

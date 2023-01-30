@@ -2,6 +2,9 @@
     .navbar  {
         background-color: #14141F;
     }
+    .mb-4{
+        font-weight: 600;
+    }
 </style>
 <?php echo $__env->make('publicUser.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <br>
@@ -163,7 +166,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
-                      
+
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="<?php echo e(old('comment')); ?>"></textarea>
@@ -181,15 +184,20 @@ unset($__errorArgs, $__bag); ?>
     </div>
 </div>
 
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="booking p-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-6 text-white">
-                    <h6 class="text-white text-uppercase"></h6>
-                    <h1 class="text-white mb-4"></h1>
-                    <p class="mb-4"></p>
-                    <p class="mb-4"></p>
+    <div class="container" >
+        <div class="booking1 p-4" style="padding-bottom: 0 !important">
+            <div class="row  align-items-center" >
+                <div class="col-md-12 text-white" >
+
+                    <h5 class="text-white text-uppercase">Notes:</h5>
+                    <ul>
+                    
+                    <li class="mb-4" >Reservations can't be cancelled or edited when 3 days are left. </li>
+                    <li class="mb-4"> Pick-up available from hotels located in the Aqaba Sea area. </li>
+                    <li class="mb-4">Date and Time is calculated based on local time of destination.</li>
+                    <li class="mb-4"> Meeting point instructions: Please ensure you arrive at the meeting point at least 15 minutes in advance. </li>
+                    <li class="mb-4"> Children are welcome free of charge up to 6 years old, maximum 1 child per booking</li>
+                    </ul>
 
                 </div>
                 <div class="col-md-6">
@@ -202,7 +210,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </div>
-</div>
+
 
 
 
@@ -224,7 +232,7 @@ unset($__errorArgs, $__bag); ?>
     //     maxDate: '+28D',
     // });
     $( function() {
-    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+    $( "#date_picker" ).datepicker({ minDate: 3, maxDate: "+2M" });
   } );
 
     // $('#date_picker').attr('min',today);

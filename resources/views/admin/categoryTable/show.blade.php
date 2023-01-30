@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -31,33 +31,32 @@ Category
 
 @section('content')
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto" >
     <div class="col-12">
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Category controls</h3>
 
-          <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 100px;">
+          <div class="card-tools" >
+            <div class="input-group input-group-sm" style="width: 100px;" >
 
 
               <a href="{{route('admin.categories.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
 
-   
+
               </div>
             </div>
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap "  >
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Image</th>
                 <th>Description</th>
-                {{-- <th>Reason</th> --}}
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
