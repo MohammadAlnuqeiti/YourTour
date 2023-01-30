@@ -32,7 +32,7 @@ Profile
 @section('content')
 
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto" style="text-align: center;">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -52,15 +52,15 @@ Profile
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0 "  style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap" style="justify-content: center">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Password</th>
+                
                 {{-- <th>is_admin</th> --}}
                 {{-- <th>Delete</th> --}}
               </tr>
@@ -73,7 +73,7 @@ Profile
                     <td>{{$value->name}}</td>
                     <td>{{$value->email	}}</td>
                     <td>{{$value->phone	}}</td>
-                    <td>{{$value->password	}}</td>
+                    
                     {{-- <td>{{$value->is_admin	}}</td> --}}
 
                     {{-- <td>

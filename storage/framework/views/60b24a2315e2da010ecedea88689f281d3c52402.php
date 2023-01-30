@@ -87,6 +87,14 @@
             <a href="<?php echo e(route('admin.show.admin')); ?>" class="nav-link  <?php echo $__env->yieldContent('Profile'); ?>">
               <i class="nav-icon fa-solid fa-address-card"></i>
               <p>
+                Messages
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo e(route('admin.show.admin')); ?>" class="nav-link  <?php echo $__env->yieldContent('Profile'); ?>">
+              <i class="nav-icon fa-solid fa-address-card"></i>
+              <p>
                 Admin 
               </p>
             </a>

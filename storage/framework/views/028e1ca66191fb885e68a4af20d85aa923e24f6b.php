@@ -27,7 +27,7 @@ user
 
 <?php $__env->startSection('content'); ?>
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -47,15 +47,14 @@ user
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap" style="text-align: center;">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Password</th>
                 <th>is_admin</th>
                 <th>Delete</th>
               </tr>
@@ -68,7 +67,6 @@ user
                     <td><?php echo e($value->name); ?></td>
                     <td><?php echo e($value->email); ?></td>
                     <td><?php echo e($value->phone); ?></td>
-                    <td><?php echo e($value->password); ?></td>
                     <td><?php echo e($value->is_admin); ?></td>
 
                     <td>

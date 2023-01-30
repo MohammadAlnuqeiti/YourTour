@@ -7,10 +7,26 @@ Reservation
 <link rel="stylesheet" href="<?php echo e(asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')); ?>">
 <link rel="stylesheet" href=".<?php echo e(asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')); ?>">
 <style>
-        .p-0::-webkit-scrollbar{
-        width: 0.5rem !important;
-    }
-</style>
+  /* width */
+  ::-webkit-scrollbar {
+  height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  </style>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('section_title'); ?>
@@ -32,7 +48,7 @@ Reservation
 
 <?php $__env->startSection('content'); ?>
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -42,7 +58,7 @@ Reservation
         </div>
         <!-- /.card-header -->
 
-        <div class="card-body table-responsive p-0" style="height: 300px;">
+        <div class="card-body table-responsive p-0" >
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
