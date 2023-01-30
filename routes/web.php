@@ -15,6 +15,7 @@ use App\Http\Controllers\User\TripsDetailsController;
 use App\Http\Controllers\User\EditBookController;
 use App\Http\Controllers\User\BookController;
 use App\Http\Controllers\User\ProfileUserController;
+use App\Http\Controllers\FeedController;
 use App\Http\Controllers\User\Search;
 
 /*
@@ -68,9 +69,12 @@ Route::get('/about',function(){
     return view('publicUser.about');
 })->name('about');
 
-Route::get('/contact',function(){
-    return view('publicUser.contact');
-})->name('contact');
+// Route::get('/contact',function(){
+//     return view('publicUser.contact');
+// })->name('contact');
+
+ Route::get('/contact',[FeedController::class,'index'])->name('contact');
+ Route::get('/contact/create',[FeedController::class,'store'])->name('contact.create');
 
 Route::resource('/signup',RegisterUserController::class);
 Route::post('/search' , [Search::class , 'search'])->name('search');
