@@ -32,7 +32,7 @@ Profile
 <?php $__env->startSection('content'); ?>
 
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto" style="text-align: center;">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -52,15 +52,15 @@ Profile
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0 "  style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap" style="justify-content: center">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Password</th>
+                
                 
                 
               </tr>
@@ -73,7 +73,7 @@ Profile
                     <td><?php echo e($value->name); ?></td>
                     <td><?php echo e($value->email); ?></td>
                     <td><?php echo e($value->phone); ?></td>
-                    <td><?php echo e($value->password); ?></td>
+                    
                     
 
                     
