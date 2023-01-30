@@ -27,7 +27,12 @@ welcome
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>{{$number_of_trips}}</h3>
+              @if($number_of_trips)
+              <h3>
+                
+                {{$number_of_trips}}
+              </h3>
+              @endif
 
               <p>Numbet of trips</p>
             </div>

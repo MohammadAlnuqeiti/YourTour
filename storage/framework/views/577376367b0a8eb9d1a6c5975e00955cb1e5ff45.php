@@ -130,7 +130,7 @@
 
 
 
-                            <?php if($diff->format("%d%")>3): ?>
+                            <?php if($diff->format("%d%")>=3): ?>
                             <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                         <?php endif; ?>
                         <?php if($diff->format("%d%")<3): ?>

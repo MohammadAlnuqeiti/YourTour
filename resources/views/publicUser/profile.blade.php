@@ -127,7 +127,7 @@
 
 
 
-                            @if($diff->format("%d%")>3)
+                            @if($diff->format("%d%")>=3)
                             <a href="{{route('user.book.edit',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
                         @endif
                         @if($diff->format("%d%")<3)

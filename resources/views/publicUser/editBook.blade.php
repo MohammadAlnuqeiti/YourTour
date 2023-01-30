@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
+                                <button class="btn btn-outline-light w-100 py-3" type="submit">Edit reservation</button>
                             </div>
                         </div>
                     </form>
