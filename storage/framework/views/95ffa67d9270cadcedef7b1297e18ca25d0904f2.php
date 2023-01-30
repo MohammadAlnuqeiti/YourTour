@@ -213,7 +213,7 @@ unset($__errorArgs, $__bag); ?>
 
 
 $( function() {
-    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+    $( "#date_picker" ).datepicker({ minDate: 3, maxDate: "+2M" });
   } );
 
 

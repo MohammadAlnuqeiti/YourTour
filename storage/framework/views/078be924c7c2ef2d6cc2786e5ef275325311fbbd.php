@@ -23,6 +23,7 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo e((asset('favicon-32x32.png'))); ?>">
 
     <form method="POST" action="<?php echo e(route('login')); ?>">
         <?php echo csrf_field(); ?>
