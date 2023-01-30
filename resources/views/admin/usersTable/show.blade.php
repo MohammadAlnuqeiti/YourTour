@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -30,7 +30,7 @@ user
 
 @section('content')
  <!-- /.row -->
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -44,36 +44,35 @@ user
 
                 <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-             
+
               </div>
             </div>
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-head-fixed text-nowrap">
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap" style="text-align: center;">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Password</th>
                 <th>is_admin</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($data as $value)
+                @if($value->is_admin==0)
 
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->name}}</td>
                     <td>{{$value->email	}}</td>
                     <td>{{$value->phone	}}</td>
-                    <td>{{$value->password	}}</td>
                     <td>{{$value->is_admin	}}</td>
-                  
+
                     <td>
                         <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                             @method('delete')
@@ -83,6 +82,7 @@ user
                     </td>
 
                 </tr>
+                @endif
                 @endforeach
 
 

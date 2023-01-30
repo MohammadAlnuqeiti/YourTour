@@ -1,4 +1,4 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
@@ -31,7 +31,7 @@ Trips
 <?php $__env->startSection('content'); ?>
  <!-- /.row -->
 
- <div class="row container m-auto">
+ <div class="row container-fluid m-auto" >
     <div class="col-12">
       <div class="card">
         <div class="card-header">
@@ -50,7 +50,7 @@ Trips
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">
+        <div class="card-body table-responsive p-0" >
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>

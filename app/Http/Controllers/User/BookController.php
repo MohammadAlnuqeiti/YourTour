@@ -28,7 +28,7 @@ class BookController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'phoneNumber' => ['required', 'max:10'],
+            'phoneNumber' => ['required', 'max:10' ,'min:10'],
             'res_date' => ['required'],
         ]);
 
@@ -62,5 +62,5 @@ class BookController extends Controller
         return redirect()->route('user.profile.index')->with('success','Book success');
 
     }
-    
+
 }

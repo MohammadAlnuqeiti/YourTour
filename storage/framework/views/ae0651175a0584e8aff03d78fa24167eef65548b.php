@@ -8,6 +8,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+ 
+
     <!-- Favicon -->
     <link href="users/img/favicon.ico" rel="icon">
 
@@ -30,11 +32,53 @@
 
     <!-- Template Stylesheet -->
     <link href="users/css/style.css" rel="stylesheet">
+    <style>
+  
+        .list-section {
+  /* background-color: #f5f5f5; */
+  padding: 10rem;
+  /* height: 10rem; */
+}
+
+.list-box {
+  overflow: hidden;
+  letter-spacing: 0.5px;
+ 
+}
+
+.list-box .content h3 {
+  display: block;
+  line-height: 22px;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.list-box .content p {
+  margin-bottom: 0px;
+  opacity: 0.75;
+}
+
+.list-box .list-icon i {
+  display: block;
+  font-size: 35px;
+  margin-right: 15px;
+  color: #78B817;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 70px;
+  border: 5px #78B817 dotted;
+  border-radius: 600px;
+}
+        </style>
 </head>
 <body>
 <?php echo $__env->make('publicUser.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php $__env->startSection('active'); ?>
+active
+<?php $__env->stopSection(); ?>
     <!--  Hero Start -->
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="height: 600px;">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -62,7 +106,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
-                <h1 class="mb-5">Our Destinations</h1>
+                <h1 class="mb-5">Recommended Destinations</h1>
             </div>
             <div class="row g-4 justify-content-around">
                  <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -89,7 +133,7 @@
      <div class="container-xxl py-5 destination">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+                
                 <h1 class="mb-5">Popular Destination</h1>
             </div>
             <div class="row g-3">
@@ -129,6 +173,49 @@
         </div>
     </div>
     <!-- Destination Start -->
+
+
+    <div class="list-section pt-80 pb-80" >
+		<div class="container">
+
+			<div class="row" style="margin-left:70px;">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shipping-fast"></i>
+						</div>
+						<div class="content">
+							<h3>Pick-up Service</h3>
+							<p>Pick-up and drop-off services available</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>24/7 Support</h3>
+							<p>Get support all day</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-sync"></i>
+						</div>
+						<div class="content">
+							<h3>Refund</h3>
+							<p>Get refund if any of our services didn't come-up to standards</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 
 

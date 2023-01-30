@@ -1,4 +1,4 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
@@ -46,13 +46,13 @@ Category
                   <label for="exampleInputEmail1">name</label>
                   <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-           
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
                   <input type="text" class="form-control" name="description" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-            
-            
+
+
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
@@ -65,7 +65,7 @@ Category
                     </div>
                   </div>
                 </div>
-             
+
               </div>
               <!-- /.card-body -->
 
@@ -112,4 +112,5 @@ Category
     });
   </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\yourTour\resources\views/admin/categoryTable/create.blade.php ENDPATH**/ ?>

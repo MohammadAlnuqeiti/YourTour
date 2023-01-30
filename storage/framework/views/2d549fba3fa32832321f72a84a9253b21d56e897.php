@@ -23,6 +23,7 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+    <link rel="icon" href="<?php echo e(asset('image/placeholder.png')); ?>">
 
     <form method="POST" action="<?php echo e(route('login')); ?>">
         <?php echo csrf_field(); ?>
@@ -128,30 +129,20 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400"><?php echo e(__('Remember me')); ?></span>
-            </label>
-        </div>
+       
 
-        <div class="flex items-center justify-end mt-4">
-            <?php if(Route::has('password.request')): ?>
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="<?php echo e(route('password.request')); ?>">
-                    <?php echo e(__('Forgot your password?')); ?>
-
-                </a>
-            <?php endif; ?>
+        <div class="flex items-center justify-center mt-4" >
+          
 
             <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.primary-button','data' => ['class' => 'ml-3']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.primary-button','data' => ['class' => 'ml-3','style' => 'background-color:#3ED2A2 ; color:azure;']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('primary-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'ml-3']); ?>
+<?php $component->withAttributes(['class' => 'ml-3','style' => 'background-color:#3ED2A2 ; color:azure;']); ?>
                 <?php echo e(__('Log in')); ?>
 
              <?php echo $__env->renderComponent(); ?>
