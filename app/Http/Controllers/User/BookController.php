@@ -59,7 +59,7 @@ class BookController extends Controller
 
         ]);
 
-        return redirect()->route('user.profile.index')->with('success','Book success');
+        return redirect()->route('user.profile.index')->with('success','Reservation Successful,thank you for booking.');
 
     }
 
