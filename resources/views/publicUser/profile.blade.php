@@ -104,7 +104,7 @@
                         {{-- <img class="img-fluid" src="/users/img/bali1.png" alt=""> --}}
                     </div>
                     <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$value['trip']}}</small>
+                        <small class="flex-fill text-center border-end py-2" style="min-height: 58px;justify-content: center;display: flex;align-items: center;"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$value['trip']}}</small>
                         {{-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
                     </div>

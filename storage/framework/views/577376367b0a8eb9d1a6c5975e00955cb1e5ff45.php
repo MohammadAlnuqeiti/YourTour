@@ -108,7 +108,7 @@
                         
                     </div>
                     <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['trip']); ?></small>
+                        <small class="flex-fill text-center border-end py-2" style="min-height: 58px;justify-content: center;display: flex;align-items: center;"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['trip']); ?></small>
                         
                     </div>
                     <div class="text-center p-4" style="min-height: 277px;">
