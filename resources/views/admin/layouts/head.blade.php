@@ -39,6 +39,8 @@
 
   <script src="https://kit.fontawesome.com/a8b56cb52b.js" crossorigin="anonymous"></script>
 
+
+
   {{-- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"> --}}
   <style> 
   .nav-pills .nav-link.active,
