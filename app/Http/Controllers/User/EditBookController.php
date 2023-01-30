@@ -32,7 +32,7 @@ class EditBookController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'phoneNumber' => ['required', 'max:10'],
+            'phoneNumber' => ['required', 'max:10' ,'min:10'],
             'res_date' => ['required'],
         ]);
 
@@ -50,7 +50,6 @@ class EditBookController extends Controller
         $date2=date_create(now());
         $diff=date_diff($date2,$date1);
 
-        // dd($diff->format("%d%"));
 
         if($diff->format("%d%")>3){
         $data->first_name = $request->first_name ;  //id لانه هون انا موجودة عندي البيانات من خلال ال  new model ما عملت هون

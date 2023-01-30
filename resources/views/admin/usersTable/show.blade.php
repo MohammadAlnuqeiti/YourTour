@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -44,7 +44,7 @@ user
 
                 <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-             
+
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ user
                     <td>{{$value->phone	}}</td>
                     <td>{{$value->password	}}</td>
                     <td>{{$value->is_admin	}}</td>
-                  
+
                     <td>
                         <form action="{{Route('admin.users.destroy',$value->id)}}" method="post">
                             @method('delete')

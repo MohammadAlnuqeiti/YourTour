@@ -1,6 +1,3 @@
-;
-
-
 <?php $__env->startSection('title'); ?>
 user
 <?php $__env->stopSection(); ?>
@@ -44,7 +41,7 @@ user
 
                 <a href="<?php echo e(route('admin.users.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-             
+
               </div>
             </div>
           </div>
@@ -73,7 +70,7 @@ user
                     <td><?php echo e($value->phone); ?></td>
                     <td><?php echo e($value->password); ?></td>
                     <td><?php echo e($value->is_admin); ?></td>
-                  
+
                     <td>
                         <form action="<?php echo e(Route('admin.users.destroy',$value->id)); ?>" method="post">
                             <?php echo method_field('delete'); ?>

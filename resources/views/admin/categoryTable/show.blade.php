@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -43,7 +43,7 @@ Category
 
               <a href="{{route('admin.categories.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
 
-   
+
               </div>
             </div>
           </div>

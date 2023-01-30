@@ -1,6 +1,3 @@
-;
-
-
 <?php $__env->startSection('title'); ?>
 Reservation
 <?php $__env->stopSection(); ?>
@@ -9,6 +6,11 @@ Reservation
 <link rel="stylesheet" href="<?php echo e(asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')); ?>">
 <link rel="stylesheet" href="<?php echo e(asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')); ?>">
 <link rel="stylesheet" href=".<?php echo e(asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')); ?>">
+<style>
+        .p-0::-webkit-scrollbar{
+        width: 0.5rem !important;
+    }
+</style>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('section_title'); ?>

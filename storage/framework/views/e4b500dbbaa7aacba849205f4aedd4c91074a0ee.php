@@ -1,6 +1,3 @@
-;
-
-
 <?php $__env->startSection('title'); ?>
 Trips
 <?php $__env->stopSection(); ?>

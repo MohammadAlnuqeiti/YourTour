@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -120,9 +120,9 @@ welcome
               </div>
             </div><!-- /.card-body -->
           </div>
-         
 
-          
+
+
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -173,9 +173,9 @@ welcome
           </div>
           <!-- /.card --> --}}
 
-         
 
-          
+
+
         </section>
         <!-- right col -->
       </div>

@@ -1,6 +1,3 @@
-;
-
-
 <?php $__env->startSection('title'); ?>
 welcome
 <?php $__env->stopSection(); ?>
@@ -86,9 +83,9 @@ welcome
       </div>
       
 
-         
 
-          
+
+
         </section>
         <!-- right col -->
       </div>

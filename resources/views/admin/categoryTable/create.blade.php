@@ -1,4 +1,4 @@
-@extends('admin.layouts.master');
+@extends('admin.layouts.master')
 
 
 @section('title')
@@ -46,13 +46,13 @@ Category
                   <label for="exampleInputEmail1">name</label>
                   <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-           
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
                   <input type="text" class="form-control" name="description" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-            
-            
+
+
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
@@ -65,7 +65,7 @@ Category
                     </div>
                   </div>
                 </div>
-             
+
               </div>
               <!-- /.card-body -->
 

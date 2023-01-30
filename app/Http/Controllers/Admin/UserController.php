@@ -50,7 +50,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'phone' => ['required', 'max:10'],
+            'phone' => ['required', 'max:10' ,'min:10','unique:'.User::class],
             'password' => ['required', Rules\Password::defaults()],
         ]);
         $user=User::create([
@@ -112,5 +112,5 @@ class UserController extends Controller
         User::findOrfail($id)->delete();
         return redirect()->route('admin.users.index');
     }
-   
+
 }
