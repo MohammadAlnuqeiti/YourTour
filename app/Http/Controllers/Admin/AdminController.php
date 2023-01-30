@@ -26,7 +26,7 @@ class AdminController extends Controller
         $number_of_reservation=$reservation[0]->reservation;
         $number_of_trips=$trip[0]->trip;
         $number_of_message=$feed[0]->feed;
-        // dd($reservation[0]->reservation);
+        // dd($number_of_trips);
 
     return view('admin.index',['number_of_users'=>$number_of_users , 'number_of_reservation'=>$number_of_reservation,'number_of_trips'=>$number_of_trips,'number_of_message'=>$number_of_message]);
 }

@@ -132,12 +132,15 @@
 
                             <?php if($diff->format("%d%")>=3): ?>
                             <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
-                        <?php endif; ?>
-                        <?php if($diff->format("%d%")<3): ?>
-                        <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm bg-gradient-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;pointer-events: none;background-color:gray;color:white;">Edit</a>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                            <?php if($diff->format("%d%")<3): ?>
+                            <a href="<?php echo e(route('user.book.edit',$value['id'])); ?>" class="btn btn-sm bg-gradient-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;pointer-events: none;background-color:gray;color:white;">Edit</a>
+                            <a href="<?php echo e(route('user.profile.destroy',$value['id'])); ?>" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42);;pointer-events: none; border-color:rgb(226, 42, 42);">Delete</a>
+
+                            <?php endif; ?>
 
 
+                            <?php if($diff->format("%d%")>=3): ?>
                             <form action="<?php echo e(Route('user.profile.destroy',$value['id'])); ?>" method="post">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
@@ -146,6 +149,7 @@
 
                                 
                             </form>
+                            <?php endif; ?>
                             
                         </div>
                     </div>
