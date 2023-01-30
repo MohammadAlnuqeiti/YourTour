@@ -1,3 +1,4 @@
+
 <style>
     .navbar  {
         background-color: #14141F;
@@ -115,7 +116,119 @@
         </div>
 
     </div>
-</div>
+
+        <div class="container" style="margin-top: 100px;">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3"></h6>
+                <h1 class="mb-5">Our Team</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+    
+          
+    
+                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 250px">
+                    
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+    
+                            
+    
+                            <img class="img-fluid" src="{{asset('storage/image/mohd.jpeg')}}" alt="" style="height: 260px; margin-left:25px; ">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2">Mohammad Al-Nuqeiti</small>
+                            
+                        </div>
+                       
+                            <p ></p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 250px">
+                        
+                        <div class="package-item">
+                            <div class="overflow-hidden">
+        
+                                
+        
+                                <img class="img-fluid" src="{{asset('storage/image/huda.png')}}" alt="" style="height: 260px; padding:15px">
+                            </div>
+                            <div class="d-flex border-bottom">
+                                <small class="flex-fill text-center border-end py-2">Huda Al-Ausaily</small>
+                                
+                            </div>
+                           
+                                <p ></p>
+                               
+                            </div>
+                        </div>
+                
+    
+                  
+    
+                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s"  style="width: 250px">
+                        
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+    
+                            
+    
+                            <img class="img-fluid" src="{{asset('storage/image/oday.png')}}" alt="" style="height: 260px;">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2">Oday Al-Ghoul</small>
+                            
+                        </div>
+                       
+                            <p ></p>
+                           
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 250px">
+                        
+                        <div class="package-item">
+                            <div class="overflow-hidden">
+        
+                                
+        
+                                <img class="img-fluid" src="{{asset('storage/image/tabarak.png')}}" alt="" style="height: 260px;">
+                            </div>
+                            <div class="d-flex border-bottom">
+                                <small class="flex-fill text-center border-end py-2">Tabarak Al-Hawadi</small>
+                                
+                            </div>
+                           
+                                <p ></p>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 250px">
+                        
+                            <div class="package-item">
+                                <div class="overflow-hidden">
+            
+                                    
+            
+                                    <img class="img-fluid" src="{{asset('storage/image/noor.png')}}" alt="" style="height: 260px;">
+                                </div>
+                                <div class="d-flex border-bottom">
+                                    <small class="flex-fill text-center border-end py-2">Noor Al-Kasasbeh</small>
+                                    
+                                </div>
+                               
+                                    <p ></p>
+                                    
+                                </div>
+                            </div>
+                           
+                                
+                            
+                   
+  
+                    </div>
+     </div>
 <!-- About End -->
 <br>
 <br>

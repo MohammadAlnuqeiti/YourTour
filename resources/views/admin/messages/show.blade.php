@@ -25,7 +25,7 @@ admin
 @endsection
 
 @section('title_page2')
-Profile
+Messages
 @endsection
 
 

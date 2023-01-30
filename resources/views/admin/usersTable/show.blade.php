@@ -42,7 +42,7 @@ user
 
 
 
-                <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
+                {{-- <a href="{{route('admin.users.create')}}"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a> --}}
 
 
               </div>

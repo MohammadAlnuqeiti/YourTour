@@ -25,7 +25,7 @@ admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('title_page2'); ?>
-Profile
+Messages
 <?php $__env->stopSection(); ?>
 
 
