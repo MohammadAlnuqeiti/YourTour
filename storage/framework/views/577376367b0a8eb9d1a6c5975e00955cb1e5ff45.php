@@ -24,12 +24,11 @@
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="height: 240.6px;">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="<?php echo e(asset("storage/image/".auth()->user()->image)); ?>" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4><?php echo e(auth()->user()->name); ?></h4>
-                      
                     </div>
                   </div>
                 </div>
@@ -72,7 +71,7 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="<?php echo e(route('user.profile.edit',auth()->user()->id)); ?>" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-success " style="background-color:#78B817; border:#78B817 ;border-radius:10px;" href="<?php echo e(route('user.profile.edit',auth()->user()->id)); ?>" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -101,7 +100,7 @@
         <div class="row g-4 justify-content-center">
             <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
            
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp"  data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
                         
@@ -112,7 +111,7 @@
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo e($value['trip']); ?></small>
                         
                     </div>
-                    <div class="text-center p-4">
+                    <div class="text-center p-4" style="min-height: 277px;">
                         <h3 class="mb-0"><?php echo e($value['price']); ?> Jd</h3>
 
                         <p>Date : <?php echo e($value['res_date']); ?></p>
@@ -127,7 +126,7 @@
                         <?php if($diff->format("%d%")<3): ?>
                         <p style="color: red"> <small>Edit time is up</small> </p>
                         <?php endif; ?>
-                        <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
+                        <div class="d-flex justify-content-center mb-2" style="max-height: 31px ">
 
 
 

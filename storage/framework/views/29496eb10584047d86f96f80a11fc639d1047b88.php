@@ -1,3 +1,6 @@
+
+
+
 <?php $__env->startSection('title'); ?>
 welcome
 <?php $__env->stopSection(); ?>
@@ -29,7 +32,7 @@ welcome
               <p>Numbet of trips</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa-solid fa-plane-departure"></i>
             </div>
             <a href="<?php echo e(route('admin.trips.index')); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -44,7 +47,7 @@ welcome
               <p>Numer of reservation</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="ion fas fa-th"></i>
             </div>
             <a href="<?php echo e(route('admin.reservation.index')); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -59,7 +62,7 @@ welcome
               <p>User Registrations</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa-solid fa-users"></i>
             </div>
             <a href="<?php echo e(route('admin.users.index')); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -74,7 +77,7 @@ welcome
               <p>Number of message</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fa-solid fa-message"></i>
             </div>
             <a href="<?php echo e(route('user.contact.show')); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -82,10 +85,6 @@ welcome
         <!-- ./col -->
       </div>
       
-
-
-
-
         </section>
         <!-- right col -->
       </div>

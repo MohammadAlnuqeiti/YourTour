@@ -23,15 +23,11 @@
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="height: 240.6px;">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="{{asset("storage/image/".auth()->user()->image)}}" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{auth()->user()->name}}</h4>
-                      {{-- <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-outline-primary">Message</button> --}}
                     </div>
                   </div>
                 </div>
@@ -71,7 +67,7 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="{{route('user.profile.edit',auth()->user()->id)}}" style="border-radius: 10px">Edit</a>
+                      <a class="btn btn-success " style="background-color:#78B817; border:#78B817 ;border-radius:10px;" href="{{route('user.profile.edit',auth()->user()->id)}}" style="border-radius: 10px">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -100,7 +96,7 @@
         <div class="row g-4 justify-content-center">
             @foreach($data as $value)
            {{-- {{ dd($value)}} --}}
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp"  data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
                         {{-- {{dd($value['trip_image']);}} --}}
@@ -112,7 +108,7 @@
                         {{-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small> --}}
                     </div>
-                    <div class="text-center p-4">
+                    <div class="text-center p-4" style="min-height: 277px;">
                         <h3 class="mb-0">{{$value['price']}} Jd</h3>
 
                         <p>Date : {{$value['res_date']}}</p>
@@ -127,7 +123,7 @@
                         @if($diff->format("%d%")<3)
                         <p style="color: red"> <small>Edit time is up</small> </p>
                         @endif
-                        <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
+                        <div class="d-flex justify-content-center mb-2" style="max-height: 31px ">
 
 
 

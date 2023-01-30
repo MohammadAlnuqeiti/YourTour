@@ -93,7 +93,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo e(route('user.contact.show')); ?>" class="nav-link  <?php echo $__env->yieldContent('message'); ?>">
-              <i class="nav-icon fa-solid fa-address-card"></i>
+              <i class="nav-icon fa-solid fa-message"></i>
               <p>
                 Messages
               </p>

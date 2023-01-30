@@ -33,6 +33,7 @@
     <!-- Template Stylesheet -->
     <link href="users/css/style.css" rel="stylesheet">
     <style>
+  
         .list-section {
   /* background-color: #f5f5f5; */
   padding: 10rem;
@@ -73,8 +74,11 @@
 </head>
 <body>
 @include('publicUser.navbar')
+@section('active')
+active
+@endsection
     <!--  Hero Start -->
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="height: 600px;">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -111,7 +115,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Destinations</h6>
-                <h1 class="mb-5">Our Destinations</h1>
+                <h1 class="mb-5">Recommended Destinations</h1>
             </div>
             <div class="row g-4 justify-content-around">
                  @foreach ($data as $value)
@@ -138,7 +142,7 @@
      <div class="container-xxl py-5 destination">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+                
                 <h1 class="mb-5">Popular Destination</h1>
             </div>
             <div class="row g-3">
