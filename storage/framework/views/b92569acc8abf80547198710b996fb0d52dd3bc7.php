@@ -1,4 +1,4 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
@@ -43,7 +43,7 @@ Category
 
               <a href="<?php echo e(route('admin.categories.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add category</button></a>
 
-   
+
               </div>
             </div>
           </div>

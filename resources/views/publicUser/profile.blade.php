@@ -119,14 +119,32 @@
                         <p>number_of_guest : {{$value['number_of_guest']}}</p>
                         <p>status : {{$value['status']}}</p>
                         {{-- <p>Welcome to the Candi Resort to escape from the hustle and bustle, and embrace the tranquility</p> --}}
+                           <?php    $date1=date_create(  $value['res_date'] );
+                                    $date2=date_create(now());
+                                    $diff=date_diff($date2,$date1);
+                                    // dd($diff->format("%d%"));
+                                    ?>
+                        @if($diff->format("%d%")<3)
+                        <p style="color: red"> <small>Edit time is up</small> </p>
+                        @endif
                         <div class="d-flex justify-content-center mb-2" style="max-height: 31px">
+
+
+
+                            @if($diff->format("%d%")>3)
                             <a href="{{route('user.book.edit',$value['id'])}}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Edit</a>
+                        @endif
+                        @if($diff->format("%d%")<3)
+                        <a href="{{route('user.book.edit',$value['id'])}}" class="btn btn-sm bg-gradient-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;pointer-events: none;background-color:gray;color:white;">Edit</a>
+                        @endif
+
+
                             <form action="{{Route('user.profile.destroy',$value['id'])}}" method="post">
                                 @method('delete')
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">
                                 <button type="submit" class="btn btn-sm btn-danger btn-flat show_confirm" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);" data-toggle="tooltip" title='Delete'>Delete</button>
-                                  
+
                                 {{-- <button type="submit" class="btn btn-sm btn-primary px-3"  style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</button> --}}
                             </form>
                             {{-- <a href="{{route('user.profile.destroy',$value['id'])}}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color:rgb(226, 42, 42); border-color:rgb(226, 42, 42);">Delete</a> --}}
@@ -183,7 +201,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script type="text/javascript">
- 
+
      $('.show_confirm').click(function(event) {
           var form =  $(this).closest("form");
           var name = $(this).data("name");
@@ -201,7 +219,7 @@
             }
           });
       });
-  
+
 </script>
 
 

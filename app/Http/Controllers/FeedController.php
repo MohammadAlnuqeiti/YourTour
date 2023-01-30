@@ -21,7 +21,7 @@ class FeedController extends Controller
             'subject' => ['required','string','max:255'],
             'message' => ['required','string', 'max:255'],
         ]);
-       
+
         $name = $request->input('name');
         $email = $request->input('email');
         $phoneNumber = $request->input('phoneNumber');
@@ -32,5 +32,10 @@ class FeedController extends Controller
         DB::table('feeds')->insert($data);
 
         return redirect()->route('user.contact');
+    }
+    public function show(){
+        $data=Feed::all();
+        // dd($data);
+        return view('admin.messages.show',['data'=>$data]);
     }
 }

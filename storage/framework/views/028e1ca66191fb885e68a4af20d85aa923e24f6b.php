@@ -1,6 +1,3 @@
-;
-
-
 <?php $__env->startSection('title'); ?>
 user
 <?php $__env->stopSection(); ?>
@@ -44,7 +41,7 @@ user
 
                 <a href="<?php echo e(route('admin.users.create')); ?>"><button type="button" class="btn btn-block bg-gradient-primary btn-sm">Add admin</button></a>
 
-             
+
               </div>
             </div>
           </div>
@@ -64,6 +61,7 @@ user
             </thead>
             <tbody>
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value->is_admin==0): ?>
 
                 <tr>
                     <td><?php echo e($value->id); ?></td>
@@ -71,7 +69,7 @@ user
                     <td><?php echo e($value->email); ?></td>
                     <td><?php echo e($value->phone); ?></td>
                     <td><?php echo e($value->is_admin); ?></td>
-                  
+
                     <td>
                         <form action="<?php echo e(Route('admin.users.destroy',$value->id)); ?>" method="post">
                             <?php echo method_field('delete'); ?>
@@ -81,6 +79,7 @@ user
                     </td>
 
                 </tr>
+                <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
