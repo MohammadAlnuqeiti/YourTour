@@ -33,7 +33,12 @@
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn " data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5" style="justify-content: center;">
-            
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Company</h4>
+                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Contact Us</a>
+                
+            </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Contact</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Aqaba, Jordan</p>
@@ -69,7 +74,13 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Customer service</h4>
+                <p>“Customer service shouldn’t just be a department, it should be the entire company.”<br>We are always ready and on the go to answer your question and concerned to hear your feedback.
+
+                </p>
+                
+            </div>
         </div>
     </div>
     

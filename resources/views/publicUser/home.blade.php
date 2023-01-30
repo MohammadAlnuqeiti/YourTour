@@ -8,6 +8,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+ 
+
     <!-- Favicon -->
     <link href="users/img/favicon.ico" rel="icon">
 
@@ -30,6 +32,44 @@
 
     <!-- Template Stylesheet -->
     <link href="users/css/style.css" rel="stylesheet">
+    <style>
+        .list-section {
+  /* background-color: #f5f5f5; */
+  padding: 10rem;
+  /* height: 10rem; */
+}
+
+.list-box {
+  overflow: hidden;
+  letter-spacing: 0.5px;
+ 
+}
+
+.list-box .content h3 {
+  display: block;
+  line-height: 22px;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.list-box .content p {
+  margin-bottom: 0px;
+  opacity: 0.75;
+}
+
+.list-box .list-icon i {
+  display: block;
+  font-size: 35px;
+  margin-right: 15px;
+  color: #78B817;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 70px;
+  border: 5px #78B817 dotted;
+  border-radius: 600px;
+}
+        </style>
 </head>
 <body>
 @include('publicUser.navbar')
@@ -138,6 +178,49 @@
         </div>
     </div>
     <!-- Destination Start -->
+
+
+    <div class="list-section pt-80 pb-80" >
+		<div class="container">
+
+			<div class="row" style="margin-left:70px;">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shipping-fast"></i>
+						</div>
+						<div class="content">
+							<h3>Pick-up Service</h3>
+							<p>Pick-up and drop-off services available</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>24/7 Support</h3>
+							<p>Get support all day</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-sync"></i>
+						</div>
+						<div class="content">
+							<h3>Refund</h3>
+							<p>Get refund if any of our services didn't come-up to standards</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 
 
