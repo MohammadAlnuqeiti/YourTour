@@ -158,16 +158,16 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/bg.hero1.jpg);
+    background: linear-gradient(rgba(20, 20, 31, 0.274), rgba(20, 20, 31, 0.32)), url(../img/home-bg.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+/* .breadcrumb-item + .breadcrumb-item::before {
 
 color: rgba(255, 255, 255, .5);
-}
+} */
 
 
 /*** Section Title ***/
@@ -286,10 +286,15 @@ color: rgba(255, 255, 255, .5);
 
 /*** Booking ***/
 .booking {
-    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(..users/img/booking.png);
+    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(users/img/bg.hero1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.booking1 {
+
+    background: linear-gradient(rgba(120, 184, 23, 0.719), rgba(120, 184, 23, 0.719));
+    
 }
 
 
