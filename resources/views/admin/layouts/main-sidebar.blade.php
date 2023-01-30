@@ -92,7 +92,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('user.contact.show')}}" class="nav-link  @yield('message')">
-              <i class="nav-icon fa-solid fa-address-card"></i>
+              <i class="nav-icon fa-solid fa-message"></i>
               <p>
                 Messages
               </p>
