@@ -1,4 +1,4 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
@@ -66,7 +66,7 @@ Category
                     </div>
                   </div>
                 </div>
-            
+
               </div>
               <!-- /.card-body -->
 

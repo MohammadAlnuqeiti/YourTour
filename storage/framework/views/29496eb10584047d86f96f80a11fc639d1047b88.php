@@ -27,7 +27,13 @@ welcome
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3><?php echo e($number_of_trips); ?></h3>
+              <?php if($number_of_trips): ?>
+              <h3>
+                
+                <?php echo e($number_of_trips); ?>
+
+              </h3>
+              <?php endif; ?>
 
               <p>Numbet of trips</p>
             </div>
