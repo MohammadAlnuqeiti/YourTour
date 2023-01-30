@@ -1,8 +1,8 @@
-;
+
 
 
 <?php $__env->startSection('title'); ?>
-Category
+Admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -12,11 +12,11 @@ Category
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('section_title'); ?>
-Create new category
+Add new Admin
 <?php $__env->stopSection(); ?>
 
 
-<?php $__env->startSection('User'); ?>
+<?php $__env->startSection('Profile'); ?>
 active
 <?php $__env->stopSection(); ?>
 
@@ -25,7 +25,7 @@ admin
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('title_page2'); ?>
-Category
+Admin
 <?php $__env->stopSection(); ?>
 
 
@@ -35,7 +35,7 @@ Category
     <div class="col-12">
         <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">Controls</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
