@@ -93,7 +93,7 @@
                                    @enderror
                                 </div>
                             </div>
-                      
+
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="{{ old('comment')}}"></textarea>
@@ -154,7 +154,7 @@
     //     maxDate: '+28D',
     // });
     $( function() {
-    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+    $( "#date_picker" ).datepicker({ minDate: 3, maxDate: "+2M" });
   } );
 
     // $('#date_picker').attr('min',today);

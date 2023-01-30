@@ -163,7 +163,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
-                      
+
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" name="comment" value="<?php echo e(old('comment')); ?>"></textarea>
@@ -224,7 +224,7 @@ unset($__errorArgs, $__bag); ?>
     //     maxDate: '+28D',
     // });
     $( function() {
-    $( "#date_picker" ).datepicker({ minDate: -1, maxDate: "+2M" });
+    $( "#date_picker" ).datepicker({ minDate: 3, maxDate: "+2M" });
   } );
 
     // $('#date_picker').attr('min',today);
