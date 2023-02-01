@@ -31,6 +31,7 @@ class PackageDetailsController extends Controller
             ];
 
         }
+        
         return view('publicUser.bali',['data'=>$data]);
 }
 }

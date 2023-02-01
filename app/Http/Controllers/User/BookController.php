@@ -17,8 +17,15 @@ class BookController extends Controller
 
     public function index($id)
     {
-        $data = Trip::findOrfail($id);
-        return view('publicUser.book',['data'=>$data]);
+
+        if(count(Trip::all()) < $id || $id < 0){
+            return redirect()->back();
+        }
+        return view('publicUser.book', [
+            'data' => Trip::findOrFail($id)
+        ]);
+        // $data = Trip::findOrfail($id);
+        // return view('publicUser.book',['data'=>$data]);
 
     }
     public function create(Request $request , $id)

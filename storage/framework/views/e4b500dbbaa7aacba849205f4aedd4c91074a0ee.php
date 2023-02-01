@@ -1,6 +1,3 @@
-
-
-
 <?php $__env->startSection('title'); ?>
 Trips
 <?php $__env->stopSection(); ?>
@@ -54,16 +51,12 @@ Trips
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Short description</th>
-                <th>Long description</th>
-                <th>image</th>
-                <th>Category</th>
-                <th>Guest number</th>
-                <th>price</th>
-                <th>edit</th>
-                <th>delete</th>
+                <th style="text-align: center">#</th>
+                <th style="text-align: center">Name</th>
+                <th style="text-align: center">more details</th>
+                
+                <th style="text-align: center">edit</th>
+                <th style="text-align: center">delete</th>
               </tr>
             </thead>
             <tbody>
@@ -72,21 +65,15 @@ Trips
 
 
                 <tr>
-                    <td><?php echo e($value['id']); ?></td>
-                    <td><?php echo e($value['name']); ?></td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px"><?php echo e($value['short_description']); ?></td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px"><?php echo e($value['long_description']); ?></td>
-                    
+                    <td style="text-align: center"><?php echo e($value['id']); ?></td>
+                    <td style="text-align: center"><?php echo e($value['name']); ?></td>
+                    <td style="text-align: center"><a href="<?php echo e(Route('admin.trips.show',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-info btn-sm">more details</button>
 
-<?php $img=$value['image']?>
 
-                    <td><img src="<?php echo e(URL::asset("storage/image/$img")); ?>" alt="" style="width: 75px"></td>
-                    <td><?php echo e($value['category']); ?></td>
-                    <td><?php echo e($value['guest_number']); ?></td>
-                    <td><?php echo e($value['price']); ?></td>
-                    <td><a href="<?php echo e(Route('admin.trips.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+
+                    <td style="text-align: center"><a href="<?php echo e(Route('admin.trips.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
                     </a></td>
-                    <td>
+                    <td style="text-align: center">
                         <form action="<?php echo e(Route('admin.trips.destroy',$value['id'])); ?>" method="post">
                             <?php echo method_field('delete'); ?>
                             <?php echo csrf_field(); ?>

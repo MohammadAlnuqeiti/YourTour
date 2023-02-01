@@ -47,24 +47,33 @@ Category
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  name" name="name" value="{{$category->name}}">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  name" name="name" value="{{$category->name}}" class="@error('name') is-invalid @enderror">
+                  @error('name')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Description</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  description" name="description" value="{{$category->description}}">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter  description" name="description" value="{{$category->description}}" class="@error('description') is-invalid @enderror">
+                  @error('description')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile" name="image" required>
+                      <input type="file" class="custom-file-input" id="exampleInputFile" name="image" class="@error('image') is-invalid @enderror">
                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                     <div class="input-group-append">
                       <span class="input-group-text">Upload</span>
                     </div>
                   </div>
+                  @error('image')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
                 </div>
 
               </div>

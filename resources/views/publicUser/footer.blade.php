@@ -47,10 +47,10 @@
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+962 77 777 7777</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>yourtour@gmail.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    {{-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> --}}
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://web.facebook.com/profile.php?id=100085332552369"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://youtu.be/BapSQFJPMM0"><i class="fab fa-youtube"></i></a>
+                    {{-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> --}}
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -81,7 +81,7 @@
                 <p>“Customer service shouldn’t just be a department, it should be the entire company.”<br>We are always ready and on the go to answer your question and concerned to hear your feedback.
 
                 </p>
-                
+
             </div>
         </div>
     </div>

@@ -50,12 +50,13 @@ Reservation
 
 
 @section('content')
- <!-- /.row -->
- <div class="row container-fluid m-auto">
+<!-- /.row -->
+
+ <div class="row container-fluid" style="margin: auto auto 30px auto">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Reservations controls</h3>
+        <div class="card-header bg-warning">
+          <h3 class="card-title">Reservations Pending</h3>
 
         </div>
         </div>
@@ -70,7 +71,6 @@ Reservation
                 <th>Last name</th>
                 <th>Phone No.</th>
                 <th>Email</th>
-                <th>ID</th>
                 <th>Trip</th>
                 <th>Guest number</th>
                 <th>Reservation date</th>
@@ -82,15 +82,13 @@ Reservation
             <tbody>
 
                 @foreach ($data as $value)
-
-
+                @if($value['status']=="Pending")
                 <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['first_name']}}</td>
                     <td>{{$value['last_name']}}</td>
                     <td>{{$value['phoneNumber']}}</td>
                     <td>{{$value['email']}}</td>
-                    <td>{{$value['user']}}</td>
                     <td>{{$value['trip']	}}</td>
                     <td>{{$value['number_of_guest']}}</td>
 
@@ -98,15 +96,6 @@ Reservation
 
                     @if ($value['status']=="Pending")
                     <td><span class="badge bg-warning">Pending</span></td>
-                    @endif
-
-                    @if ($value['status']	=="Accepted")
-                    <td><span class="badge bg-success">Accepted</span></td>
-
-                    @endif
-                    @if ($value['status']	=="Rejected")
-                    <td><span class="badge bg-danger">Rejected</span></td>
-
                     @endif
 
 
@@ -122,6 +111,157 @@ Reservation
 
                 </tr>
 
+                @endif
+                @endforeach
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+
+<div class="row container-fluid " style="margin: auto auto 30px auto">
+    <div class="col-12">
+        <div class="card">
+        <div class="card-header bg-success" >
+          <h3 class="card-title">Reservations Accepted</h3>
+
+        </div>
+        </div>
+        <!-- /.card-header -->
+
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>Trip</th>
+                    <th>Guest number</th>
+                    <th>Reservation date</th>
+                    <th>Status</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                  </tr>
+            </thead>
+            <tbody>
+
+                @foreach ($data as $value)
+                @if($value['status']=="Accepted")
+                <tr>
+                    <td>{{$value['id']}}</td>
+                    <td>{{$value['first_name']}}</td>
+                    <td>{{$value['last_name']}}</td>
+                    <td>{{$value['phoneNumber']}}</td>
+                    <td>{{$value['email']}}</td>
+                    <td>{{$value['trip']	}}</td>
+                    <td>{{$value['number_of_guest']}}</td>
+
+                    <td>{{$value['res_date']	}}</td>
+
+
+
+                    @if ($value['status']	=="Accepted")
+                    <td><span class="badge bg-success">Accepted</span></td>
+
+                    @endif
+
+
+
+
+                    <td><a href="{{Route('admin.reservation.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="{{Route('admin.reservation.destroy',$value['id'])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                @endif
+                @endforeach
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+
+ <div class="row container-fluid " style="margin: auto auto 30px auto">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-danger">
+          <h3 class="card-title">Reservations Rejected</h3>
+
+        </div>
+        </div>
+        <!-- /.card-header -->
+
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone No.</th>
+                <th>Email</th>
+                <th>Trip</th>
+                <th>Guest number</th>
+                <th>Reservation date</th>
+                <th>Status</th>
+                <th>edit</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                @foreach ($data as $value)
+                @if($value['status']=="Rejected")
+                <tr>
+                    <td>{{$value['id']}}</td>
+                    <td>{{$value['first_name']}}</td>
+                    <td>{{$value['last_name']}}</td>
+                    <td>{{$value['phoneNumber']}}</td>
+                    <td>{{$value['email']}}</td>
+                    <td>{{$value['trip']	}}</td>
+                    <td>{{$value['number_of_guest']}}</td>
+
+                    <td>{{$value['res_date']	}}</td>
+
+
+
+                    @if ($value['status']	=="Rejected")
+                    <td><span class="badge bg-danger">Rejected</span></td>
+                    @endif
+
+
+
+                    <td><a href="{{Route('admin.reservation.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="{{Route('admin.reservation.destroy',$value['id'])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                @endif
                 @endforeach
 
 

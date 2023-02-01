@@ -11,10 +11,13 @@ class TripsDetailsController extends Controller
 {
     public function index($id)
     {
-        // $employees = Employees::findOrFail($id);
+
+        if(count(Trip::all()) < $id || $id < 0){
+            return redirect()->back();
+        }
+
 
         $trips = Trip::where('id',$id)->get();
-        // dd($trips);
 
         $data = [];
         foreach ($trips as $trip) {
@@ -31,9 +34,12 @@ class TripsDetailsController extends Controller
 
 
             ];
-        }
+        };
+        return view('publicUser.details', [
+            'data' => $data
+        ]);
         // return view('publicUser.details',compact('data'));
-        return view('publicUser.details',['data'=>$data]);
+        // return view('publicUser.details',['data'=>$data]);
 
     }
 }

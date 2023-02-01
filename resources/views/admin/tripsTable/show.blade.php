@@ -59,16 +59,18 @@ Trips
           <table class="table table-head-fixed text-nowrap">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Short description</th>
+                <th style="text-align: center">#</th>
+                <th style="text-align: center">Name</th>
+                <th style="text-align: center">more details</th>
+                {{-- <th>Short description</th>
                 <th>Long description</th>
-                <th>image</th>
+                <th>image one</th>
+                <th>image two</th>
                 <th>Category</th>
                 <th>Guest number</th>
-                <th>price</th>
-                <th>edit</th>
-                <th>delete</th>
+                <th>price</th> --}}
+                <th style="text-align: center">edit</th>
+                <th style="text-align: center">delete</th>
               </tr>
             </thead>
             <tbody>
@@ -77,21 +79,15 @@ Trips
 
 
                 <tr>
-                    <td>{{$value['id']}}</td>
-                    <td>{{$value['name']}}</td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px">{{$value['short_description']}}</td>
-                    <td style="border:none;overflow-x:scroll;max-width:300px">{{$value['long_description']}}</td>
-                    {{-- <td>{{$value['image']}}</td> --}}
+                    <td style="text-align: center">{{$value['id']}}</td>
+                    <td style="text-align: center">{{$value['name']}}</td>
+                    <td style="text-align: center"><a href="{{Route('admin.trips.show',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-info btn-sm">more details</button>
 
-<?php $img=$value['image']?>
 
-                    <td><img src="{{URL::asset("storage/image/$img")}}" alt="" style="width: 75px"></td>
-                    <td>{{$value['category']}}</td>
-                    <td>{{$value['guest_number']	}}</td>
-                    <td>{{$value['price']	}}</td>
-                    <td><a href="{{Route('admin.trips.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+
+                    <td style="text-align: center"><a href="{{Route('admin.trips.edit',$value['id'])}}"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
                     </a></td>
-                    <td>
+                    <td style="text-align: center">
                         <form action="{{Route('admin.trips.destroy',$value['id'])}}" method="post">
                             @method('delete')
                             @csrf

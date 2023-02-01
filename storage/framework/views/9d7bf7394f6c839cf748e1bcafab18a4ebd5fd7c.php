@@ -1,6 +1,3 @@
-
-
-
 <?php $__env->startSection('title'); ?>
 Reservation
 <?php $__env->stopSection(); ?>
@@ -50,12 +47,13 @@ Reservation
 
 
 <?php $__env->startSection('content'); ?>
- <!-- /.row -->
- <div class="row container-fluid m-auto">
+<!-- /.row -->
+
+ <div class="row container-fluid" style="margin: auto auto 30px auto">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Reservations controls</h3>
+        <div class="card-header bg-warning">
+          <h3 class="card-title">Reservations Pending</h3>
 
         </div>
         </div>
@@ -70,7 +68,6 @@ Reservation
                 <th>Last name</th>
                 <th>Phone No.</th>
                 <th>Email</th>
-                <th>ID</th>
                 <th>Trip</th>
                 <th>Guest number</th>
                 <th>Reservation date</th>
@@ -82,15 +79,13 @@ Reservation
             <tbody>
 
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-
+                <?php if($value['status']=="Pending"): ?>
                 <tr>
                     <td><?php echo e($value['id']); ?></td>
                     <td><?php echo e($value['first_name']); ?></td>
                     <td><?php echo e($value['last_name']); ?></td>
                     <td><?php echo e($value['phoneNumber']); ?></td>
                     <td><?php echo e($value['email']); ?></td>
-                    <td><?php echo e($value['user']); ?></td>
                     <td><?php echo e($value['trip']); ?></td>
                     <td><?php echo e($value['number_of_guest']); ?></td>
 
@@ -100,14 +95,7 @@ Reservation
                     <td><span class="badge bg-warning">Pending</span></td>
                     <?php endif; ?>
 
-                    <?php if($value['status']	=="Accepted"): ?>
-                    <td><span class="badge bg-success">Accepted</span></td>
 
-                    <?php endif; ?>
-                    <?php if($value['status']	=="Rejected"): ?>
-                    <td><span class="badge bg-danger">Rejected</span></td>
-
-                    <?php endif; ?>
 
 
                     <td><a href="<?php echo e(Route('admin.reservation.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
@@ -122,6 +110,157 @@ Reservation
 
                 </tr>
 
+                <?php endif; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+
+<div class="row container-fluid " style="margin: auto auto 30px auto">
+    <div class="col-12">
+        <div class="card">
+        <div class="card-header bg-success" >
+          <h3 class="card-title">Reservations Accepted</h3>
+
+        </div>
+        </div>
+        <!-- /.card-header -->
+
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>Trip</th>
+                    <th>Guest number</th>
+                    <th>Reservation date</th>
+                    <th>Status</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                  </tr>
+            </thead>
+            <tbody>
+
+                <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value['status']=="Accepted"): ?>
+                <tr>
+                    <td><?php echo e($value['id']); ?></td>
+                    <td><?php echo e($value['first_name']); ?></td>
+                    <td><?php echo e($value['last_name']); ?></td>
+                    <td><?php echo e($value['phoneNumber']); ?></td>
+                    <td><?php echo e($value['email']); ?></td>
+                    <td><?php echo e($value['trip']); ?></td>
+                    <td><?php echo e($value['number_of_guest']); ?></td>
+
+                    <td><?php echo e($value['res_date']); ?></td>
+
+
+
+                    <?php if($value['status']	=="Accepted"): ?>
+                    <td><span class="badge bg-success">Accepted</span></td>
+
+                    <?php endif; ?>
+
+
+
+
+                    <td><a href="<?php echo e(Route('admin.reservation.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="<?php echo e(Route('admin.reservation.destroy',$value['id'])); ?>" method="post">
+                            <?php echo method_field('delete'); ?>
+                            <?php echo csrf_field(); ?>
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                <?php endif; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+
+ <div class="row container-fluid " style="margin: auto auto 30px auto">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-danger">
+          <h3 class="card-title">Reservations Rejected</h3>
+
+        </div>
+        </div>
+        <!-- /.card-header -->
+
+        <div class="card-body table-responsive p-0" >
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone No.</th>
+                <th>Email</th>
+                <th>Trip</th>
+                <th>Guest number</th>
+                <th>Reservation date</th>
+                <th>Status</th>
+                <th>edit</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($value['status']=="Rejected"): ?>
+                <tr>
+                    <td><?php echo e($value['id']); ?></td>
+                    <td><?php echo e($value['first_name']); ?></td>
+                    <td><?php echo e($value['last_name']); ?></td>
+                    <td><?php echo e($value['phoneNumber']); ?></td>
+                    <td><?php echo e($value['email']); ?></td>
+                    <td><?php echo e($value['trip']); ?></td>
+                    <td><?php echo e($value['number_of_guest']); ?></td>
+
+                    <td><?php echo e($value['res_date']); ?></td>
+
+
+
+                    <?php if($value['status']	=="Rejected"): ?>
+                    <td><span class="badge bg-danger">Rejected</span></td>
+                    <?php endif; ?>
+
+
+
+                    <td><a href="<?php echo e(Route('admin.reservation.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
+                    </a></td>
+                    <td>
+                        <form action="<?php echo e(Route('admin.reservation.destroy',$value['id'])); ?>" method="post">
+                            <?php echo method_field('delete'); ?>
+                            <?php echo csrf_field(); ?>
+                            <button type="submit" class="btn btn-block bg-gradient-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 

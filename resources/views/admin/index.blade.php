@@ -29,7 +29,7 @@ welcome
             <div class="inner">
               @if($number_of_trips)
               <h3>
-                
+
                 {{$number_of_trips}}
               </h3>
               @endif
@@ -89,20 +89,20 @@ welcome
         </div>
         <!-- ./col -->
       </div>
-      
-          <!-- /.card --> 
+
+          <!-- /.card -->
     </div>
-    
-   
+
+
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper kanban " style="margin: 0 !important;">
+{{-- <div class="content-wrapper kanban " style="margin: 0 !important;">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6">
           <h1>Kanban Board</h1>
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -181,7 +181,7 @@ welcome
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div class="card card-row card-primary">
@@ -223,7 +223,7 @@ welcome
             </div>
             <div class="card-body">
               <p>
-             
+
               </p>
             </div>
           </div>
@@ -251,15 +251,15 @@ welcome
       </div>
     </div>
   </section>
-</div>
+</div> --}}
 
 
-     
-      </div>
+
+      {{-- </div> --}}
       <!-- /.row (main row) -->
-    </div>
+    {{-- </div> --}}
     <!-- /.container-fluid -->
-  </section>
+  {{-- </section> --}}
   <!-- /.content -->
 
 @endsection

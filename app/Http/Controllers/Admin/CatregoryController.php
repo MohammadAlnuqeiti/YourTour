@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -17,7 +19,7 @@ class CatregoryController extends Controller
     {
         // return view('admin.categoryTable.show');
         $categories = Category::get();
-        
+
         return view('admin.categoryTable.show', compact('categories'));
     }
 
@@ -39,7 +41,12 @@ class CatregoryController extends Controller
      */
     public function store(Request $request)
     {
-        // dd("welcom");
+        $request->validate([
+            'name' => ['required'],
+            'description' => ['required'],
+            'image' =>['required','image','mimes:jpg,png,jpeg,gif','max:2048'],
+
+        ]);
         $category_img = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/image',$category_img);
 
@@ -75,9 +82,13 @@ class CatregoryController extends Controller
      */
     public function edit($id)
     {
-        $category= Category::findOrFail($id);
-       
-        return view('admin.categoryTable.edit', ['category' => $category]);
+        if(count(Category::all()) < $id || $id < 0){
+            return redirect()->back();
+        }
+        return view('admin.categoryTable.edit', [
+            'category' => Category::findOrFail($id)
+        ]);
+
     }
 
     /**
@@ -89,16 +100,22 @@ class CatregoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => ['required'],
+            'description' => ['required'],
+            'image' =>['required','image','mimes:jpg,png,jpeg,gif','max:2048'],
+
+        ]);
         $photoName = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/image', $photoName);
         $category=Category::findorFail($id);
         $category->name=$request->name;
         $category->description=$request->description;
         $category->image=$photoName;
-       
+
         $category->save();
          return redirect()->route('admin.categories.index');
-     
+
     }
 
     /**

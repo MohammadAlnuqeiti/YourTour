@@ -15,6 +15,9 @@ class EditBookController extends Controller
     {
 
         $reservation = Reservation::where('id', $id)->get();
+        if($reservation->isEmpty()) {
+            return redirect()->back();
+        }
 
         $trip_id=$reservation[0]->trip_id;
 

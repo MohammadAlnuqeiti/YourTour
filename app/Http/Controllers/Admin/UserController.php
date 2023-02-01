@@ -64,7 +64,7 @@ class UserController extends Controller
         event(new Registered($user));
 
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.show.admin');
     }
 
     /**

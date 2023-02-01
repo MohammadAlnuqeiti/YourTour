@@ -42,7 +42,7 @@
 
 
   {{-- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"> --}}
-  <style> 
+  <style>
   .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
@@ -66,6 +66,7 @@ a.nav-link:hover{
 a.nav-link.active:hover{
   color: #fff !important;
 }
+
   </style>
 
   @yield('css')
