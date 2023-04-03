@@ -96,8 +96,6 @@ Reservation
                     <?php endif; ?>
 
 
-
-
                     <td><a href="<?php echo e(Route('admin.reservation.edit',$value['id'])); ?>"><button type="button" class="btn btn-block bg-gradient-success btn-sm">Edit</button>
                     </a></td>
                     <td>

@@ -99,7 +99,6 @@
         </div>
         <div class="row g-4 justify-content-center">
             <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-           
             <div class="col-lg-4 col-md-6 wow fadeInUp"  data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
